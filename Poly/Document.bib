@@ -1,0 +1,2277 @@
+@inproceedings{ART_ARTP,
+  author =	 "{L. J.} Zhang and S. Pierre and L. Marchand",
+  title =	 "{Optimization of Handover Performance for FMIPv6}",
+  booktitle =	 "Intelligence in Communication Systems",
+  pages =	 {169--178},
+  year =	 2005
+}
+
+@article{ART_HMRSVP,
+  author =	 "C. Tseng and G. Lee and R. Liu and T. Wang",
+  title =	 "{HMRSVP: a Hierarchical Mobile RSVP Protocol}",
+  journal =	 "{Wireless Networks}",
+  volume =	 {9},
+  number =	 {2},
+  month =	 mar,
+  pages =	 {95--102},
+  year =	 2003
+}
+
+
+@article{Bao2013,
+  author =	 {Bao, Tao and Zhang, Xiangyu},
+  title =	 {On-the-fly Detection of Instability Problems in Floating-point Program Execution},
+  journal =	 {SIGPLAN Not.},
+  issue_date =	 {October 2013},
+  volume =	 {48},
+  number =	 {10},
+  month =	 oct,
+  year =	 {2013},
+  issn =	 {0362-1340},
+  pages =	 {817--832},
+  numpages =	 {16},
+  url =		 {http://doi.acm.org/10.1145/2544173.2509526},
+  doi =		 {10.1145/2544173.2509526},
+  acmid =	 {2509526},
+  publisher =	 {ACM},
+  address =	 {New York, NY, USA},
+  keywords =	 {continuity, discrete factors, floating point errors, floating point representation, instability, sampling},
+}
+
+@INPROCEEDINGS{Benz2012,
+  author =	 {Benz, Florian and Hildebrandt, Andreas and Hack, Sebastian},
+  title =	 {A dynamic program analysis to find floating-point accuracy problems},
+  booktitle =	 {ACM SIGPLAN Notices},
+  year =	 {2012},
+  volume =	 {47},
+  month =	 jun,
+  issn =	 {0362-1340},
+  pages =	 {453 - 462},
+  abstract =	 {Programs using floating-point arithmetic are prone to accuracy problems caused by rounding and catastrophic cancellation. These phenomena provoke bugs that are notoriously hard to track down: the program does not necessarily crash and the results are not necessarily obviously wrong, but often subtly inaccurate. Further use of these values can lead to catastrophic errors. In this paper, we present a dynamic program analysis that supports the programmer in finding accuracy problems. Our analysis uses binary translation to perform every floating-point computation side by side in higher precision. Furthermore, we use a lightweight slicing approach to track the evolution of errors.  We evaluate our analysis by demonstrating that it catches wellknown floating-point accuracy problems and by analyzing the Spec CFP2006 floating-point benchmark. In the latter, we show how our tool tracks down a catastrophic cancellation that causes a complete loss of accuracy leading to a meaningless program result. Finally, we apply our program to a complex, real-world bioinformatics application in which our program detected a serious cancellation. Correcting the instability led not only to improved quality of the result, but also to an improvement of the program's run time.},
+}
+
+@INCOLLECTION{DSilva2012,
+  author =	 {D'Silva, Vijay and Haller, Leopold and Kroening, Daniel and Tautschnig, Michael},
+  title =	 {Numeric Bounds Analysis with Conflict-Driven Learning},
+  booktitle =	 {Tools and Algorithms for the Construction and Analysis of Systems},
+  publisher =	 {Springer Berlin Heidelberg},
+  year =	 {2012},
+  editor =	 {Flanagan, Cormac and König, Barbara},
+  volume =	 {7214},
+  series =	 {Lecture Notes in Computer Science},
+  pages =	 {48-63},
+  abstract =	 {This paper presents a sound and complete analysis for determining the range of floating-point variables in control software. Existing approaches to bounds analysis either use convex abstract domains and are efficient but imprecise, or use floating-point decision procedures, and are precise but do not scale. We present a new analysis that elevates the architecture of a modern SAT solver to operate over floating-point intervals. In experiments, our analyser is consistently more precise than a state-of-the-art static analyser and significantly outperforms floating-point decision procedures.},
+  doi =		 {10.1007/978-3-642-28756-5\_5},
+  isbn =	 {978-3-642-28755-8},
+}
+
+@INPROCEEDINGS{Dabrowski2011,
+  author =	 {Dabrowski, Adam and Pawowski, Pawe and Stankiewicz, Mateusz and Misiorek, Filip},
+  title =	 {Quasi-maximum accuracy floating-point computations with {GPGPU} for applications in digital signal processing},
+  booktitle =	 {SPA 2011 - Signal Processing: Algorithms, Architectures, Arrangements, and Applications - Conference Proceedings},
+  year =	 {2011},
+  pages =	 {144 - 148},
+  address =	 {Poznan, Poland},
+  abstract =	 {An idea of the use of two accumulators for improvement of the precision of floating-point computations with graphic processing units (GPUs) is presented in this paper for applications in digital signal processing.  The increase of the precision of computations does not need any increase of the length of the data words. This is particularly important if hardware limits for the precision of computations exist, which is just the case for graphic processors. A history of development of the cores of graphic cards is analyzed together with the idea of general purpose computing using GPU's (GPGPU). Special attention has been paid to efficiency and precision of computations. The so-called maximum accuracy property has been analyzed and technically realized with no additional costs in hardware and computation time. The proposed approach has been tested with illustrative frequency modulated sine waveform generators.},
+}
+
+@ARTICLE{DeDinechin2011,
+  author =	 {De Dinechin, Florent and Lauter, Christoph and Melquiond, Guillaume},
+  title =	 {Certifying the floating-point implementation of an elementary function using {G}appa},
+  journal =	 {IEEE Transactions on Computers},
+  year =	 {2011},
+  volume =	 {60},
+  pages =	 {242 - 253},
+  number =	 {2},
+  abstract =	 {High confidence in floating-point programs requires proving numerical properties of final and intermediate values. One may need to guarantee that a value stays within some range, or that the error relative to some ideal value is well bounded. This certification may require a time-consuming proof for each line of code, and it is usually broken by the smallest change to the code, e.g., for maintenance or optimization purpose. Certifying floating-point programs by hand is, therefore, very tedious and error-prone. The Gappa proof assistant is designed to make this task both easier and more secure, due to the following novel features: It automates the evaluation and propagation of rounding errors using interval arithmetic. Its input format is very close to the actual code to validate. It can be used incrementally to prove complex mathematical properties pertaining to the code. It generates a formal proof of the results, which can be checked independently by a lower level proof assistant like Coq. Yet it does not require any specific knowledge about automatic theorem proving, and thus, is accessible to a wide community. This paper demonstrates the practical use of this tool for a widely used class of floating-point programs: implementations of elementary functions in a mathematical library.},
+  doi =		 {10.1109/TC.2010.128},
+}
+
+@article{DeFigueiredo2004,
+  year =	 {2004},
+  issn =	 {1017-1398},
+  journal =	 {Numerical {A}lgorithms},
+  volume =	 {37},
+  number =	 {1-4},
+  doi =		 {10.1023/B:NUMA.0000049462.70970.b6},
+  title =	 {Affine Arithmetic: Concepts and Applications},
+  publisher =	 {Kluwer Academic Publishers},
+  keywords =	 {interval arithmetic; range analysis; dependency problem},
+  author =	 {de Figueiredo, LuizHenrique and Stolfi, Jorge},
+  pages =	 {147-158},
+  language =	 {English}
+}
+
+@incollection{Filliatre2007,
+  year =	 {2007},
+  isbn =	 {978-3-540-73367-6},
+  booktitle =	 {Computer Aided Verification},
+  volume =	 {4590},
+  series =	 {Lecture Notes in Computer Science},
+  editor =	 {Damm, Werner and Hermanns, Holger},
+  doi =		 {10.1007/978-3-540-73368-3\_21},
+  title =	 {The {W}hy/{K}rakatoa/{C}aduceus Platform for Deductive Program Verification},
+  publisher =	 {Springer Berlin Heidelberg},
+  author =	 {Filliâtre, Jean-Christophe and Marché, Claude},
+  pages =	 {173-177},
+  language =	 {English}
+}
+
+@ARTICLE{Fousse2007,
+  author =	 {Laurent Fousse and Guillaume Hanrot and Vincent Lefèvre and Patrick Pélissier and Paul Zimmermann},
+  title =	 {{MPFR}: {A} multiple-precision binary floating-point library with correct rounding},
+  journal =	 {ACM Transactions on Mathematical Software},
+  year =	 {2007},
+  volume =	 {33},
+  pages =	 {1-14},
+  number =	 {2},
+  month =	 jun,
+  abstract =	 {This article presents a multiple-precision binary floating-point library, written in the ISO C language, and based on the GNU MP library. Its particularity is to extend to arbitrary-precision, ideas from the IEEE 754 standard, by providing correct rounding and exceptions.  We demonstrate how these strong semantics are achieved - -with no significant slowdown with respect to other arbitrary-precision tools - -and discuss a few applications where such a library can be useful.},
+  doi =		 {10.1145/1236463.1236468},
+}
+@ARTICLE{Goldberg1991,
+  author =	 {David Goldberg},
+  title =	 {What Every Computer Scientist Should Know About Floating-Point Arithmetic},
+  journal =	 {Computing Surveys},
+  year =	 {1991},
+  volume =	 {23},
+  pages =	 {5-48},
+  number =	 {1},
+  month =	 mar,
+  abstract =	 {Floating-point arithmetic is considered an esoteric subject by many people. This is rather surprising because floating-point is ubiquitous in computer systems. Almost every language has a floating-point datatype; computers from PCs to supercomputers have floating-point accelerators; most compilers will be called upon to compile floating-point algorithms from time to time; and virtually every operating system must respond to floating-point exceptions such as overflow. This paper presents a tutorial on those aspects of floating-point that have a direct impact on designers of computer systems. It begins with background on floating-point representation and rounding error, continues with a discussion of the IEEE floating-point standard, and concludes with numerous examples of how computer builders can better support floating-point.},
+  url =		 {http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html}
+}
+
+@INPROCEEDINGS{Goubault2001,
+  author =	 {Goubault, Eric},
+  title =	 {Static analysis of the precision of floating-point operations},
+  booktitle =	 {Static Analysis. 8th International Symposium, SAS 2001. Proceedings},
+  year =	 {2001},
+  pages =	 {234 - 59},
+  address =	 {Berlin, Germany},
+  abstract =	 {Computers manipulate approximations of real numbers, called floating-point numbers. The calculations they make are accurate enough for most applications. Unfortunately, in some (catastrophic) situations, the floating-point operations lose so much precision that they quickly become irrelevant. In this article, we review some of the problems one can encounter, focussing on the IEEE754-1985 norm. We give a (sketch of a) semantics of its basic operations then abstract them (in the sense of abstract interpretation) to extract information about the possible loss of precision. The expected application is abstract debugging of software ranging from simple on-board systems (which use more and,more on-the-shelf micro-processors with floating-point units) to scientific codes. The abstract analysis is demonstrated on simple examples and compared with related work},
+}
+@INPROCEEDINGS{Goubault2008,
+  author =	 {Goubault, Eric and Putot, Sylvie and Baufreton, Philippe and Gassino, Jean},
+  title =	 {Static analysis of the accuracy in control systems: {P}rinciples and experiments},
+  booktitle =	 {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+  year =	 {2008},
+  volume =	 {4916 LNCS},
+  pages =	 {3 - 20},
+  address =	 {Berlin, Germany},
+  abstract =	 {Finite precision computations can severely affect the accuracy of computed solutions. We present a complete survey of a static analysis based on abstract interpretation, and a prototype implementing this analysis for C code, for studying the propagation of rounding errors occurring at every intermediary step in floating-point computations.  In the first part of this paper, we briefly present the domains and techniques used in the implemented analyzer, called FLUCTUAT. We describe in the second part, the experiments made on real industrial codes, at Institut de Radioprotection et de Su&circ;rete&acute; Nucle&acute;aire and at Hispano-Suiza, respectively coming from the nuclear industry and from aeronautics industry. This paper aims at filling in the gaps between some theoretical aspects of the static analysis of floating-point computations that have been described in [13,14,21], and the necessary choices of algorithms and implementation, in accordance with practical motivations drawn from real industrial cases.},
+  doi =		 {10.1007/978-3-540-79707-4\_3},
+}
+
+@MANUAL{Harder,
+  title =	 {Numerical Analysis for Engineering},
+  author =	 {Douglas Wilhelm Harder and Richard Khoury},
+  organization = {University of Waterloo},
+  year =	 {2005},
+  address =	 {200 University Avenue West, Waterloo, Ontario, Canada N2L 3G1},
+  url =		 {https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/}
+}
+
+@BOOK{Higham2002,
+  title =	 {Accuracy and Stability of Numerical Algorithms},
+  publisher =	 {SIAM},
+  year =	 {2002},
+  author =	 {Nicholas J. Higham},
+}
+
+@phdthesis{PHD_HPMRSVP,
+  author =	 "C. Abondo",
+  title =	 "{Gestion de la Qualité de Service dans les systèmes mobiles de prochaine génération}",
+  school =	 "{École Polytechnique de Montréal}",
+  year =	 2005,
+  month =	 jun
+}
+
+@manual{RFC_IPv4,
+  author =	 "J. Postel",
+  title =	 "{RFC791}: {Internet Protocol}",
+  month =	 sep,
+  year =	 1981,
+  organization = "{IETF}"
+}
+
+@book{Tanenbaum,
+  author =	 "A. Tanenbaum",
+  title =	 "Computer Networks (fourth edition)",
+  publisher =	 "Prentice-Hall International, Inc.",
+  year =	 2002,
+  isbn =	 "0-13-066102-3."
+}
+
+@MISC{Whitehead2011,
+  author =	 {Nathan Whitehead and Alex Fit-Florea},
+  title =	 {Precision \& Performance: Floating Point and {IEEE} 754 Compliance for {NVIDIA} {GPUs}},
+  year =	 {2011},
+  abstract =	 {A number of issues related to floating point accuracy and compliance are a frequent source of confusion on both CPUs and GPUs. The purpose of this white paper is to discuss the most common issues related to NVIDIA GPUs and to supplement the documentation in the CUDA C Programming Guide.},
+  url =		 {https://developer.nvidia.com/sites/default/files/akamai/cuda/files/NVIDIA-CUDA-Floating-Point.pdf}
+}
+
+@manual{mpmath,
+  key =		 {mpmath},
+  author =	 {Fredrik Johansson and others},
+  title =	 {mpmath: a {P}ython library for arbitrary-precision floating-point arithmetic (version 0.18)},
+  month =	 dec,
+  year =	 {2013},
+  url =		 {http://mpmath.org/},
+}
+@article{nichols2010,
+  author =	 {Eric Nichols and L. J. McDaid and N. H. Siddique},
+  title =	 {CASE STUDY ON A SELF-ORGANIZING SPIKING NEURAL NETWORK FOR ROBOT NAVIGATION},
+  journal =	 {International Journal of Neural Systems},
+  volume =	 {20},
+  number =	 {6},
+  pages =	 {501-508},
+  year =	 {2010},
+}
+
+@manual{nvidia2012,
+  title =	 {{CUDA} {C} {P}rogramming {G}uide},
+  author =	 {{NVIDIA}},
+  organization = {{NVIDIA}},
+  edition =	 {5},
+  year =	 {2012},
+  url =		 {http://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html}
+}
+@inproceedings{StackMine,
+     AUTHOR = "Shi Han and Yingnong Dang and Song Ge and Dongmei Zhang and Tao Xie",
+     TITLE = "Performance Debugging in the Large via Mining Millions of Stack Traces",
+     BOOKTITLE = { in Proc. 34th Intel Conf. on Software Engineering},
+     PAGES = {145-155},
+     YEAR = {2012}
+}
+@inproceedings{Introperf,
+     AUTHOR = "C. H. Kim and J. Rhee and H. Zhang and N. Arora and G. Jiang, X and Zhang and D. Xu",
+     TITLE = "Introperf: Transparent context-sensitive multi-layer performance inference using system stack traces",
+     BOOKTITLE = {The 2014 ACM International Conference on Measurement and Modeling of Computer Systems},
+     PAGES = {235-247},
+     YEAR = {2014}
+}
+
+@inproceedings{64,
+     AUTHOR = "C. H. Kim and J. Rhee and H. Zhang and N. Arora and G. Jiang, X and Zhang and D. Xu",
+     TITLE = "Introperf: Transparent context-sensitive multi-layer performance inference using system stack traces",
+     BOOKTITLE = {The 2014 ACM International Conference on Measurement and Modeling of Computer Systems},
+     PAGES = {235-247},
+     YEAR = {2014}
+}
+@inproceedings{Pip,
+    author = "Patrick Reynolds and Charles Killian and Janet L. Wiener and Jeffrey C. Mogul and Mehul A. Shah and Amin
+Vahdat.",
+    title    = "Pip: Detecting the unexpected in distributed systems. Symposium on Networked Systems
+Design and Implementation",
+    booktitle = { Symposium on Networked Systems Design and Implementation (San Jose, CA, 08–10 May 2006)},
+    pages = {115-128},
+    year = {2006}
+}
+
+@article{TAU,
+    author    = "Sameer S and Shende and Allen D. Malony",
+    title     = "The Tau Parallel Performance System",
+    journal   = "Journal of Molecular Biology",
+    volume   = "20",
+    issue = "2",
+    pages    = "287–311",
+    year      = "2006",
+}
+
+@article{francis1,
+    author    = "Francis Giraldeau and Julien Desfossez and David Goulet and Michel Dagenais and Mathieu Desnoyers",
+    title     = "Recovering System Metrics from Kernel Trace",
+    journal   = "Linux Symposium",
+    volume   = "190",
+    issue = "2",
+    pages    = "109–115",
+    year      = "2011",
+}
+
+
+@misc{gebai,
+    author    = "Mohamad Gebai and Michel R Dagenais",
+    title     = " Virtual machines CPU monitoring with kernel tracing ",
+    howpublished={\url{http://shervinemami.info/timingTests.html}},
+	note = "[Online; accessed 05-January-2017]"
+}
+
+@misc{trace_diff,
+    author    = "Ubuntu Manpage",
+    title     = "TraceDiff",
+    howpublished={\url{http://manpages.ubuntu.com/manpages/precise/man1/tracediff.1.html}},
+    year = 2017,
+	note = "[Online; accessed 05-January-2017]"
+}
+
+@misc{WPA,
+    author    = "Microsoft",
+    title     = "Windows Performance Analyzer",
+    howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
+	note = "[Online; accessed 05-January-2017]"
+}
+
+@misc{timeTests,
+    author    = "Shervin Emami",
+    title     = "Time Tests",
+    howpublished={\url{http://shervinemami.info/timingTests.html}},
+	note = "[Online; accessed 05-January-2017]"
+}
+@inproceedings{StackMine,
+     AUTHOR = "Shi Han and Yingnong Dang and Song Ge and Dongmei Zhang and Tao Xie",
+     TITLE = "Performance Debugging in the Large via Mining Millions of Stack Traces",
+     BOOKTITLE = { in Proc. 34th Intel Conf. on Software Engineering},
+     PAGES = {145-155},
+     YEAR = {2012}
+}
+
+@misc{ETW,
+    author    = "Microsoft",
+    title     = "ETW",
+    howpublished={\url{http://msdn.microsoft.com/en-us/library/
+windows/desktop/aa363668(v=vs.85).aspx.}},
+    year = 2017,
+	note = "[Online; accessed 05-January-2017]"
+}
+@misc{brendan_differential,
+    author    = "Brendan Gregg",
+    title     = "Differential Flame Graph",
+    howpublished={\url{http://www.brendangregg.com/blog/2014-11-09/differential-flame-graphs.html}},
+    year = 2014,
+	note = "[Online; accessed 05-January-2017]"
+}
+
+@misc{WPA,
+    author    = "Microsoft",
+    title     = "Windows Performance Analyzer",
+    howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
+	note = "[Online; accessed 05-January-2017]"
+}
+
+
+@misc{gdb_breakpoint,
+    author    = "Sourceware",
+    title     = "Debugging with GDB",
+    howpublished={\url{https://sourceware.org/gdb/current/onlinedocs/gdb/index.html#SEC_Contents}},
+    YEAR = {2012}
+	note = "[Accessed 05-May-2017]"
+}
+
+@misc{kprobes,
+    author    = "Sudhanshu Goswami",
+    title     = "An introduction to KProbes",
+    howpublished={\url{https://lwn.net/Articles/132196/}},
+    YEAR = {2005},
+	note = "[Accessed 05-May-2017]"
+}
+@misc{sucha_tracepoint,
+    author    = "Suchakrapani Sharma",
+    title     = "Fast Tracing with GDB",
+    howpublished={\url{https://suchakra.wordpress.com/2016/06/29/fast-tracing-with-gdb/}},
+    YEAR = {2016},
+	note = "[Accessed 05-May-2017]"
+}
+
+@misc{gprof,
+    author    = "Susan L. Graham and Peter B. Kessler and Marshall K. McKusick",
+    title     = "Windows Performance Analyzer",
+    howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
+	note = "[Online; accessed 05-05-2016]"
+}
+
+@inproceedings{ball,
+     AUTHOR = "Thomas Ball and James R. Larus",
+     TITLE = "Efficient Path Profiling",
+     BOOKTITLE = { Proceedings of the 29th Annual IEEE/ACM International Symposium on Microarchitecture. Paris, France},
+     PAGES = {46-57},
+     YEAR = {1996}
+}
+@inproceedings{root_cause,
+ author = {Magalh\~{a}es, Jo\~{a}o Paulo and Silva, Luis Moura},
+ title = {Root-cause Analysis of Performance Anomalies in Web-based Applications},
+ booktitle = {Proceedings of the 2011 ACM Symposium on Applied Computing},
+ series = {SAC '11},
+ year = {2011},
+ isbn = {978-1-4503-0113-8},
+ location = {TaiChung, Taiwan},
+ pages = {209--216},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/1982185.1982234},
+ doi = {10.1145/1982185.1982234},
+ acmid = {1982234},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {AOP monitoring, dependability, fail-stutter model, performance anomaly, root-cause analysis},
+} 
+@article{tipme,
+ author = {Endo, Yasuhiro and Seltzer, Margo},
+ title = {Improving Interactive Performance Using TIPME},
+ journal = {SIGMETRICS Perform. Eval. Rev.},
+ issue_date = {June 2000},
+ volume = {28},
+ number = {1},
+ month = jun,
+ year = {2000},
+ issn = {0163-5999},
+ pages = {240--251},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/345063.339420},
+ doi = {10.1145/345063.339420},
+ acmid = {339420},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {interactive performance, monitoring},
+} 
+
+@inproceedings{Yanok2015TLV28183022818303,
+ author = {Yanok, Ilya and Nystrom, Nathaniel},
+ title = {Tapir: A Language for Verified OS Kernel Probes},
+ booktitle = {Proceedings of the 8th Workshop on Programming Languages and Operating Systems},
+ series = {PLOS '15},
+ year = {2015},
+ isbn = {978-1-4503-3942-1},
+ location = {Monterey, California},
+ pages = {33--38},
+ numpages = {6},
+ url = {http://doi.acm.org/10.1145/2818302.2818303},
+ doi = {10.1145/2818302.2818303},
+ acmid = {2818303},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {dependent types, kernel probes, type systems},
+} 
+
+
+@inproceedings{macqueen,
+     AUTHOR = "MacQueen, J",
+     TITLE = "Some methods for classification and analysis of multivariate observations",
+     BOOKTITLE = { Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability,  Volume 1: Statistics},
+     PAGES = {281-297},
+     YEAR = {1967}
+}
+
+@misc{chromium_website,
+  author =       "Google",
+  title =        "Chromium Browser",
+  month =        "December",
+  year =         "2016",
+  url =          "https://www.chromium.org/developers",
+}
+
+@inproceedings{google_releases,
+  author =        "Abderrahmane Benbachir and Isnaldo Francisco De Melo jr and Bram Adams and Michel Dagenais",
+  title =       "Automated Performance Deviation Detection AcrossGoogle Chromium Releases",
+  booktitle={QRS 2017},
+  month =        "December",
+  year =         "2016",
+}
+
+@INPROCEEDINGS{pattern_matching_intrusion,
+author={V. Gupta and M. Singh and V. K. Bhalla},
+booktitle={2014 International Conference on Advances in Computing, Communications and Informatics (ICACCI)},
+title={Pattern matching algorithms for intrusion detection and prevention system: A comparative analysis},
+year={2014},
+pages={50-54},
+keywords={pattern matching;security of data;Boyer-Moore algorithm;IDPS;Knuth-Morris-Pratt algorithm;RabinKarp algorithm;brute-force algorithm;intrusion detection and prevention systems;malicious activities;network captured file;network speed;pattern matching algorithms;technological advancements;Algorithm design and analysis;Databases;Force;Intrusion detection;Pattern matching;Protocols;Boyer-Moore;Intrusion Detection and Prevention Systems (IDPSs);Knuth-Morris-Pratt (KMP);Pattern Matching;Rabin-Karp},
+doi={10.1109/ICACCI.2014.6968595},
+month={Sept},
+}
+
+@misc{tracecompare,
+  author =       "Francois Doray",
+  title =        "Trace Compare",
+  month =        "January",
+  year =         "2015",
+  url =          "https://github.com/fdoray/tracecompare",
+}
+
+@inproceedings{nguyen2012automated_control_chart,
+  title={Automated detection of performance regressions using statistical process control techniques},
+  author={Nguyen, Thanh HD and Adams, Bram and Jiang, Zhen Ming and Hassan, Ahmed E and Nasser, Mohamed and Flora, Parminder},
+  booktitle={Proceedings of the 3rd ACM/SPEC International Conference on Performance Engineering},
+  pages={299--310},
+  year={2012},
+  organization={ACM}
+}
+
+@inproceedings{nguyen_regression_causes,
+  title={An industrial case study of automatically identifying performance regression-causes},
+  author={Nguyen, Thanh HD and Nagappan, Meiyappan and Hassan, Ahmed E and Nasser, Mohamed and Flora, Parminder},
+  booktitle={Proceedings of the 11th Working Conference on Mining Software Repositories},
+  pages={232--241},
+  year={2014},
+  organization={ACM}
+}
+@inproceedings{heger2013automated,
+  title={Automated root cause isolation of performance regressions during software development},
+  author={Heger, Christoph and Happe, Jens and Farahbod, Roozbeh},
+  booktitle={Proceedings of the 4th ACM/SPEC International Conference on Performance Engineering},
+  pages={27--38},
+  year={2013},
+  organization={ACM}
+}
+
+@misc{opencv,
+  author =       "itseez",
+  title =        "OpenCV",
+  month =        "January",
+  year =         "2017",
+  url =          "http://opencv.org/about.html",
+  howpublished = {\url{http://opencv.org/about.html}},
+}
+
+@inproceedings{profile_based,
+  title={Profile-based, load-independent anomaly detection and analysis in performance regression testing of soft. systems},
+  author={S. Ghaith and M. Wang, P. Perry and J. Murphy,},
+  booktitle={Proceedings of the 4th ACM/SPEC International Conference on Performance Engineering},
+  pages={379--383},
+  year={2013},
+  organization={ACM}
+}
+
+@ARTICLE{multicore_system_debug,
+author={A. Spear and M. Levy and M. Desnoyers},
+journal={Computer},
+title={Using Tracing to Solve the Multicore System Debug Problem},
+year={2012},
+volume={45},
+number={12},
+pages={60-64},
+keywords={concurrency control;multiprocessing systems;program debugging;public domain software;software tools;concurrent systems;multicore designs;multicore system debug problem;open source formats;software tools;trace format;Debugging;Embedded systems;Hardware;Linux;Multicore processing;Software development;CTF;Eclipse;LTTng;Linux Trace Toolkit Next Generation;TIWG;cloud computing;debugging;performance analysis;software;tracing},
+doi={10.1109/MC.2012.191},
+ISSN={0018-9162},
+month={Dec},
+}
+
+
+@inproceedings{change,
+  title={Did something change? using statistical techniques to interpret service and resource metrics},
+  author={Bereznay, F. M.},
+  booktitle={In 32nd International Computer Measurement Group Conference},
+  pages={3--6},
+  year={2006},
+  organization={Computer Measurement Group.}
+}
+
+@misc{ring,
+  author =       "Ring Project",
+  title =        "Ring",
+  month =        "January",
+  year =         "2017",
+  url =          "http://www.ring.cx",
+}
+
+@misc{tracecompass,
+  author =       "Trace Compass community",
+  title =        "Trace Compass",
+  month =        "January",
+  year =         "2017",
+  url =          "http://tracecompass.org/",
+}
+
+
+@misc{firefox,
+  author =       "Mozilla",
+  title =        "Mozilla Support",
+  month =        "January",
+  year =         "2017",
+  url =          "https://support.mozilla.org/en-US/questions/817039?page=2",
+}
+
+@misc{mongodb,
+  author =       "MongoDB",
+  title =        "Mongo DB",
+  month =        "January",
+  year =         "2017",
+  url =          "https://docs.mongodb.com/manual/",
+}
+
+@misc{mrl,
+  author =       "Stats Software",
+  title =        "How To Find Relationship Between Variables, Multiple Regression",
+  month =        "January",
+  year =         "2017",
+  url =          "http://www.statsoft.com/Textbook/Multiple-Regression",
+}
+
+@misc{call_graph,
+  author =       "Ryder, B.G.",
+  title =        "Constructing the Call Graph of a Program.Software Engineering, IEEE Transactions on, vol. SE-5, no.3pp. 216– 226, May 1979",
+  month =        "January",
+  year =         "2017",
+  url =          "http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1702621",
+}
+
+@article{calinski,
+  added-at = {2009-12-17T17:35:39.000+0100},
+  author = {Cali{\'n}ski, T. and Harabasz, J.},
+  biburl = {https://www.bibsonomy.org/bibtex/2c343ea63ab0836fa74992f5f5493bb33/zeno},
+  interhash = {d2f0071982d39f6d7f51f1c8c5345647},
+  intrahash = {c343ea63ab0836fa74992f5f5493bb33},
+  journal = {Communications in Statistics-Simulation and Computation},
+  keywords = {clustering},
+  number = 1,
+  pages = {1--27},
+  publisher = {Taylor \& Francis},
+  timestamp = {2009-12-17T17:38:52.000+0100},
+  title = {{A dendrite method for cluster analysis}},
+  volume = 3,
+  year = 1974
+}
+
+% 
+@inproceedings{trevis,
+ author = {Adamoli, Andrea and Hauswirth, Matthias},
+ title = {Trevis: A Context Tree Visualization \&\#38; Analysis Framework and Its Use for Classifying Performance Failure Reports},
+ booktitle = {Proceedings of the 5th International Symposium on Software Visualization},
+ series = {SOFTVIS '10},
+ year = {2010},
+ isbn = {978-1-4503-0028-5},
+ location = {Salt Lake City, Utah, USA},
+ pages = {73--82},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1879211.1879224},
+ doi = {10.1145/1879211.1879224},
+ acmid = {1879224},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {perceptible performance, tree visualization and analysis},
+} 
+
+@misc{precise,
+  author =       "William N. Sumner and Yunhui Zheng and Dasarath Weeratunge and Xiangyu Zhang",
+  title =        "Precise Calling Context Encoding",
+  month =        "January",
+  year =         "2017",
+  url =          "https://www.cs.purdue.edu/homes/xyzhang/Comp/icse10.pdf",
+}
+
+@misc{apriori,
+ author =       "Rakesh Agrawal and Ramakrishnan Srikant",
+  title =        "Fast algorithms for mining association rules in large databases. Proceedings of the 20th International Conference on Very Large Data Bases, VLDB, pages 487-499, Santiago, Chile, September 1994.",
+  month =        "January",
+  year =         "2017",
+  url =          "http://rakesh.agrawal-family.com/papers/vldb94apriori.pdf",
+
+}
+
+@book{optc++,
+    title={Optimized C++},
+    author={Kurt Guntheroth},
+    publisher={O'Reilly Media},
+    year={2016}
+}
+
+@misc{desnoyers,
+ author =       "Mathieu Desnoyers and Michel R. Dagenais ",
+  title =        "The LTTng tracer: A low impact performance and behavior monitor for GNU/Linux",
+  month =        "January",
+  year =         "2017",
+  url =          "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.116.5569&rep=rep1&type=pdf",
+
+}
+
+@misc{vitillo,
+  author =       "Roberto A. Vitillo ",
+  title =        "Performance Tools Developments.Future computing in particle physics, 16 June 2011",
+  month =        "January",
+  year =         "2017",  
+  howpublished = {\url{http://indico.cern.ch/event/141309/contributions/1369454/attachments/126021/178987/RobertoVitillo_FutureTech_EDI.pdf}},
+  note = "[Online; accessed 05-January-2017]"
+
+}
+
+@article{trace_abstraction_1,
+ author = {Ezzati-Jivan, Naser and Dagenais, Michel R.},
+ title = {A Stateful Approach to Generate Synthetic Events from Kernel Traces},
+ journal = {Adv. Soft. Eng.},
+ issue_date = {January 2012},
+ volume = {2012},
+ month = jan,
+ year = {2012},
+ issn = {1687-8655},
+ pages = {6:6--6:6},
+ articleno = {6},
+ numpages = {1},
+ url = {http://dx.doi.org/10.1155/2012/140368},
+ doi = {10.1155/2012/140368},
+ acmid = {2434003},
+ publisher = {Hindawi Publishing Corp.},
+ address = {New York, NY, United States},
+} 
+@misc{differential_flame,
+  author =       "Brendan Gregg",
+  title =        "Differential flame graphs",
+  month =        "January",
+  year =         "2017",
+  howpublished = {\url{http://www.brendangregg.com/blog/2014-11-09/differential-flame-graphs.html}},
+  note = "[Online; accessed 05-January-2017]"
+
+}
+
+
+@misc{perf,
+  author =       "Kernel.org",
+  title =        "perf: Linux profiling with performance counters",
+  month =        "January",
+  year =         "2014",
+  url =          "https://perf.wiki.kernel.org/",
+
+}
+
+@misc{doray_thesis,
+  author = "Francois Doray",
+  title = "Analyse de variations de performance par comparaison de traces d’exécution. Master Thesis",
+  month = "Jul",
+  year = "2015",
+  url = "https://666.tapa.na.oreia.com",
+}
+
+@misc{olsa,
+  author = "Jiri Olsa",
+  title = "perf: Add backtrace post dwarf unwind.",
+  month = "May",
+  year = "2012",
+  url = "http://lwn.net/Articles/499116/",
+}
+
+@misc{27,
+    author = "G. Ammons, T. Ball, and J. R. Larus",
+    title = "Exploiting hardware performance counters with flow and context sensitive profiling, in Proceedings of the ACM SIGPLAN 1997 Conference on Programming Language Design and Implementation, ser. PLDI ’97. New York, NY: ACM, 1997, pp. 85–96.",
+    month = "Jul",
+    year = "2015",
+    url = "https://666.tapa.na.oreia.com",
+}
+
+@misc{28,
+    author = "X. Zhuang, S. Kim, M. i. Serrano, and J.-D. Choi",
+    title = "Perfdiff: A framework for performance difference analysis in a virtual machine environment in Proceedings of the 6th Annual IEEE/ACM International Symposium on Code Generation and Optimization. New York, NY: ACM, 2008, pp. 4–13.",
+    month = "Jul",
+    year = "2015",
+    url = "https://666.tapa.na.oreia.com",
+}
+
+@misc{67,
+    author = "X. Zhuang, S. Kim, M. i. Serrano, and J.-D. Choi",
+    title = "Perfdiff: A framework for performance difference analysis in a virtual machine environment in Proceedings of the 6th Annual IEEE/ACM International Symposium on Code Generation and Optimization. New York, NY: ACM, 2008, pp. 4–13.",
+    month = "Jul",
+    year = "2015",
+    url = "https://666.tapa.na.oreia.com",
+}
+
+@misc{4,
+    author = "L. Adhianto, S. Banerjee, M. Fagan, M. Krentel, G. Marin, J. Mellor Crummey, and N. R. Tallent",
+    title = "HPCToolkit: tools for performance analysis of optimized parallel programs,” Concurrency and Computation: Practice and Experience, vol. 22, no. 6, pp. 685–701, Apr.2010.",
+    month = "Jul",
+    year = "2015",
+     url = "https://666.tapa.na.oreia.com",
+}
+
+
+@misc{peen,
+    author = "Course Book of Peen State University",
+    title = "A Matrix Formulation of the Multiple Regression Model",
+    month = "Jul",
+    year = "2015",
+     url = "https://onlinecourses.science.psu.edu/stat501/node/382",
+}
+
+@misc{perftool,
+    author = "Aleksandar Milenkovic",
+    title = "Performance Measurements: Perf Tool",
+    month = "Jul",
+    year = "2015",
+     url = "http://lacasa.uah.edu/portal/Upload/tutorials/perf.tool/PerfTool.pdf",
+}
+
+@misc{redhat,
+    author = "RedHat",
+    title = "Red Hat Enterprise Linux 3: Introduction to System Administration",
+    month = "Jul",
+    year = "2015",
+     url = "https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/Introduction_to_System_Administration/s1-memory-virt-details.html",
+}
+
+@misc{washington,
+    author = "Washington Edu",
+    title = "Concerning caches",
+    month = "Jul",
+    year = "2015",
+     url = "https://courses.cs.washington.edu/courses/cse378/02sp/sections/section9-2.html",
+}
+
+@book{deep,
+    title={Deep Learning},
+    author={Ian Goodfellow and Yoshua Bengio and Aaron Courville},
+    publisher={MIT Press},
+    note={\url{http://www.deeplearningbook.org}},
+    year={2016}
+}
+
+@misc{deep_predict,
+    author = "Michael K.K. Leung and Brendan J. Frey",
+    title = "Using deep learning to predict variable polyadenylation",
+    month = "Jul",
+    year = "2015",
+     url = "http://www.psi.toronto.edu/~mleung/",
+}
+
+
+@misc{solution,
+    author = "Statistic Solutions",
+    title = "What is Multiple Linear Regression?",
+    month = "Jul",
+    year = "2015",
+     url = "http://www.statisticssolutions.com/what-is-multiple-linear-regression/",
+}
+
+@misc{opencv3,
+    author = "Open Cv Documentation",
+    title = "Reading and Writing Images",
+     howpublished = {\url{http://docs.opencv.org/3.0-beta/modules/imgcodecs/doc/reading_and_writing_images.html}},
+     year = 2014,
+     note = "[Online; accessed 05-January-2017]"
+}
+
+@article{Cohen,
+ author = {Cohen, Ira and Cozman, Fabio G. and Sebe, Nicu and Cirelo, Marcelo C. and Huang, Thomas S.},
+ title = {Semisupervised Learning of Classifiers: Theory, Algorithms, and Their Application to Human-Computer Interaction},
+ journal = {IEEE Trans. Pattern Anal. Mach. Intell.},
+ issue_date = {December 2004},
+ volume = {26},
+ number = {12},
+ month = dec,
+ year = {2004},
+ issn = {0162-8828},
+ pages = {1553--1567},
+ numpages = {15},
+ url = {http://dx.doi.org/10.1109/TPAMI.2004.127},
+ doi = {10.1109/TPAMI.2004.127},
+ acmid = {1032582},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {65, Bayesian network classifiers., Index Terms- Semisupervised learning, Index Terms- Semisupervised learning, generative models, facial expression recognition, face detection, unlabeled data, Bayesian network classifiers., face detection, facial expression recognition, generative models, unlabeled data},
+}
+
+@phdthesis{desnoyer,
+    author = {M. Desnoyers},
+    title = {{Low-impact Operating System Tracing}},
+    school = {Ecole Polytechnique de Montreal},
+    year = {2009},
+    month = {},
+}
+
+@misc{chicago,
+    author = "Jacob B. Matthews",
+    title = "What's Wrong with C++ Templates?",
+    url = "http://people.cs.uchicago.edu/~jacobm/pubs/templates.html",
+    year = 2017 
+}
+
+@misc{dispatch,
+    author = "Karel Driesen and Urs Hölzle",
+    title = "The Direct Cost of Virtual Function Calls in C++",
+    year = 1996,
+    note = "Presented at OOPSLA 96 - 10/96, San Jose, CA",
+}
+
+@misc{brendan_flamegraph,
+    author = "Brendan Gregg",
+    title = "Flame Graphs",
+    \howpublished = {\url{http://www.brendangregg.com/flamegraphs.html}},
+    year = 2017,
+    note = "[Online; accessed 05-January-2017]"
+}
+
+@article{SPECTRAPERF,
+ author = {Bezemer, C. and Milon, E. and Zaidman, A. and Pouwelse, J.},
+ title = {Detecting and Analyzing I/O Performance Regressions},
+ journal = {J. Softw. Evol. Process},
+ issue_date = {December 2014},
+ volume = {26},
+ number = {12},
+ month = dec,
+ year = {2014},
+ issn = {2047-7473},
+ pages = {1193--1212},
+ numpages = {20},
+ url = {http://dx.doi.org/10.1002/smr.1657},
+ doi = {10.1002/smr.1657},
+ acmid = {2926331},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+ keywords = {performance analysis, performance optimization, performance regressions},
+}
+
+@misc{regression_opencv,
+    author = "OpenCV",
+    title = "Issues 1423",
+    year = 2012,
+    url = "http://code.opencv.org/issues/1423",
+    howpublished = {\url{http://code.opencv.org/issues/1423}},
+    year = 2014,
+}
+
+@misc{opencv_source_diff,
+    author = "OpenCV",
+    title = "Difference",
+    url = "https://github.com/opencv/opencv/compare/3.0.0...3.1.0",
+    howpublished = {\url{https://github.com/opencv/opencv/compare/3.0.0...3.1.0}},
+    note = "[Online; accessed 05-January-2017]",
+    year = 2012
+}
+
+@misc{inline_site,
+    author = " Pete Isensee",
+    title = "Inline performance",
+    year = 2016,
+     url = "http://www.tantalon.com/pete/cppopt/final.htm",
+     note = "[Online; accessed 05-January-2017]",
+     year = 2014,
+}
+
+@misc{essentials,
+    author = "Avi Silberschatz and Greg Gagne and Peter B. Galvin",
+    title = "Operating systems concepts essentials",
+    year = 2006,
+    note = "1ed. Wiley",
+}
+
+@misc{multi_dimentionals_sse,
+    author = "A.M. Rajee  and F. Sagayaraj Francis",
+    title = "A Study on Outlier distance and SSE with multidimensional datasets in K-means clustering",
+    year = 2013,
+    note = "Fifth International Conference on Advanced Computing (ICoAC)",
+}
+
+
+@INPROCEEDINGS{summarizing_traces,
+author={A. Hamou-Lhadj and T. Lethbridge},
+booktitle={14th IEEE International Conference on Program Comprehension (ICPC'06)},
+title={Summarizing the Content of Large Traces to Facilitate the Understanding of the Behaviour of a Software System},
+year={2006},
+pages={181-190},
+keywords={Unified Modeling Language;object-oriented programming;program diagnostics;reverse engineering;software maintenance;UML sequence diagram;Weka system;dynamic analysis;execution trace summarization;object-oriented system;program comprehension;reverse engineering;software system;text summarization;Abstracts;Debugging;Performance analysis;Reverse engineering;Software performance;Software systems;Software tools;Unified modeling language;Design;Dynamic analysis;Program comprehension;Reverse engineering;recovery},
+doi={10.1109/ICPC.2006.45},
+ISSN={1092-8138},
+month={},}
+
+@article{statl,
+ author = {Eckmann, Steven T. and Vigna, Giovanni and Kemmerer, Richard A.},
+ title = {STATL: An Attack Language for State-based Intrusion Detection},
+ journal = {J. Comput. Secur.},
+ issue_date = {2002},
+ volume = {10},
+ number = {1-2},
+ month = jul,
+ year = {2002},
+ issn = {0926-227X},
+ pages = {71--103},
+ numpages = {33},
+ url = {http://dl.acm.org/citation.cfm?id=597917.597921},
+ acmid = {597921},
+ publisher = {IOS Press},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+} 
+@misc{microsoft_bug,
+    author = "Microsoft - Developer Network Casablanca ",
+    title = "Memory leak issue with casablanca library",
+    year = 2013,
+    note = "https://social.msdn.microsoft.com/Forums/en-US/b9d5b83a-2465-4db1-b292-23b5ea6a6ef2/memory-leak-issue-with-casablanca-library?forum=casablanca"
+}
+
+
+@inproceedings{StackMine,
+     AUTHOR = "Shi Han and Yingnong Dang and Song Ge and Dongmei Zhang and Tao Xie",
+     TITLE = "Performance Debugging in the Large via Mining Millions of Stack Traces",
+     BOOKTITLE = { in Proc. 34th Intel Conf. on Software Engineering},
+     PAGES = {145-155},
+     YEAR = {2012}
+}
+
+
+@article{francis2,
+    author    = "Mohamad Gebai and Francis Giraldeau and Michel R Dagenais",
+    title     = " Fine-grained preemption analysis for latency investigation across virtual machines ",
+    journal   = "Journal of Cloud Computing",
+    volume   = "3",
+    issue = "1",
+    pages    = "23",
+    year      = "2014",
+}
+
+@misc{gebai,
+    author    = "Mohamad Gebai and Michel R Dagenais",
+    title     = " Virtual machines CPU monitoring with kernel tracing ",
+    howpublished={\url{http://shervinemami.info/timingTests.html}},
+	note = "[Online; accessed 05-January-2017]"
+}
+
+@misc{WPA,
+    author    = "Microsoft",
+    title     = "Windows Performance Analyzer",
+    howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
+	note = "[Online; accessed 05-January-2017]"
+}
+
+@misc{timeTests,
+    author    = "Shervin Emami",
+    title     = "Time Tests",
+    howpublished={\url{http://shervinemami.info/timingTests.html}},
+	note = "[Online; accessed 05-January-2017]"
+}
+@inproceedings{StackMine,
+     AUTHOR = "Shi Han and Yingnong Dang and Song Ge and Dongmei Zhang and Tao Xie",
+     TITLE = "Performance Debugging in the Large via Mining Millions of Stack Traces",
+     BOOKTITLE = { in Proc. 34th Intel Conf. on Software Engineering},
+     PAGES = {145-155},
+     YEAR = {2012}
+}
+
+
+@misc{WPA,
+    author    = "Microsoft",
+    title     = "Windows Performance Analyzer",
+    howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
+	note = "[Online; accessed 05-January-2016]"
+}
+
+@misc{gprof,
+    author    = "Susan L. Graham and Peter B. Kessler and Marshall K. McKusick",
+    title     = "Windows Performance Analyzer",
+    howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
+	note = "[Online; accessed 05-January-2016]"
+}
+
+@inproceedings{ball,
+     AUTHOR = "Thomas Ball and James R. Larus",
+     TITLE = "Efficient Path Profiling",
+     BOOKTITLE = { Proceedings of the 29th Annual IEEE/ACM International Symposium on Microarchitecture. Paris, France},
+     PAGES = {46-57},
+     YEAR = {1996}
+}
+
+@inproceedings{macqueen,
+     AUTHOR = "MacQueen, J",
+     TITLE = "Some methods for classification and analysis of multivariate observations",
+     BOOKTITLE = { Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability,  Volume 1: Statistics},
+     PAGES = {281-297},
+     YEAR = {1967}
+}
+
+@misc{chromium_website,
+  author =       "Google",
+  title =        "Chromium Browser",
+  month =        "December",
+  year =         "2016",
+  url =          "https://www.chromium.org/developers",
+}
+
+
+
+@inproceedings{nguyen2012automated_control_chart,
+  title={Automated detection of performance regressions using statistical process control techniques},
+  author={Nguyen, Thanh HD and Adams, Bram and Jiang, Zhen Ming and Hassan, Ahmed E and Nasser, Mohamed and Flora, Parminder},
+  booktitle={Proceedings of the 3rd ACM/SPEC International Conference on Performance Engineering},
+  pages={299--310},
+  year={2012},
+  organization={ACM}
+}
+
+@inproceedings{nguyen_regression_causes,
+  title={An industrial case study of automatically identifying performance regression-causes},
+  author={Nguyen, Thanh HD and Nagappan, Meiyappan and Hassan, Ahmed E and Nasser, Mohamed and Flora, Parminder},
+  booktitle={Proceedings of the 11th Working Conference on Mining Software Repositories},
+  pages={232--241},
+  year={2014},
+  organization={ACM}
+}
+@inproceedings{heger2013automated,
+  title={Automated root cause isolation of performance regressions during software development},
+  author={Heger, Christoph and Happe, Jens and Farahbod, Roozbeh},
+  booktitle={Proceedings of the 4th ACM/SPEC International Conference on Performance Engineering},
+  pages={27--38},
+  year={2013},
+  organization={ACM}
+}
+
+@misc{opencv,
+  author =       "itseez",
+  title =        "OpenCV",
+  month =        "January",
+  year =         "2017",
+  url =          "http://opencv.org/about.html",
+}
+
+@inproceedings{profile_based,
+  title={Profile-based, load-independent anomaly detection and analysis in performance regression testing of soft. systems},
+  author={S. Ghaith and M. Wang, P. Perry and J. Murphy,},
+  booktitle={Proceedings of the 4th ACM/SPEC International Conference on Performance Engineering},
+  pages={379--383},
+  year={2013},
+  organization={ACM}
+}
+
+@inproceedings{change,
+  title={Did something change? using statistical techniques to interpret service and resource metrics},
+  author={Bereznay, F. M.},
+  booktitle={In 32nd International Computer Measurement Group Conference},
+  pages={3--6},
+  year={2006},
+  organization={Computer Measurement Group.}
+}
+
+@misc{ring,
+  author =       "Ring Project",
+  title =        "Ring",
+  month =        "January",
+  year =         "2017",
+  url =          "http://www.ring.cx",
+}
+
+
+@misc{firefox,
+  author =       "Mozilla",
+  title =        "Mozilla Support",
+  month =        "January",
+  year =         "2017",
+  url =          "https://support.mozilla.org/en-US/questions/817039?page=2",
+}
+
+@misc{mongodb,
+  author =       "MongoDB",
+  title =        "Mongo DB",
+  month =        "January",
+  year =         "2017",
+  url =          "https://docs.mongodb.com/manual/",
+}
+
+@misc{mrl,
+  author =       "Stats Software",
+  title =        "How To Find Relationship Between Variables, Multiple Regression",
+  month =        "January",
+  year =         "2017",
+  url =          "http://www.statsoft.com/Textbook/Multiple-Regression",
+}
+
+@misc{peen,
+    author = "Course Book of Peen State University",
+    title = "A Matrix Formulation of the Multiple Regression Model",
+    month = "Jul",
+    year = "2015",
+     url = "https://onlinecourses.science.psu.edu/stat501/node/382",
+}
+
+
+
+@misc{redhat,
+    author = "RedHat",
+    title = "Red Hat Enterprise Linux 3: Introduction to System Administration",
+    month = "Jul",
+    year = "2015",
+     url = "https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/Introduction_to_System_Administration/s1-memory-virt-details.html",
+}
+
+@misc{washington,
+    author = "Washington Edu",
+    title = "Concerning caches",
+    month = "Jul",
+    year = "2015",
+     url = "https://courses.cs.washington.edu/courses/cse378/02sp/sections/section9-2.html",
+}
+
+
+
+@misc{deep_predict,
+    author = "Michael K.K. Leung and Brendan J. Frey",
+    title = "Using deep learning to predict variable polyadenylation",
+    month = "Jul",
+    year = "2015",
+     url = "http://www.psi.toronto.edu/~mleung/",
+}
+
+@misc{solution,
+    author = "Statistic Solutions",
+    title = "What is Multiple Linear Regression?",
+    month = "Jul",
+    year = "2015",
+     url = "http://www.statisticssolutions.com/what-is-multiple-linear-regression/",
+}
+
+@misc{opencv3,
+    author = "Open Cv Documentation",
+    title = "Reading and Writing Images",
+     url = "http://docs.opencv.org/3.0-beta/modules/imgcodecs/doc/reading_and_writing_images.html",
+}
+
+
+@misc{1,
+    author = "LTTng-UST vs SystemTap userspace tracing benchmarks.",
+    title = "Julien Desfossez",
+    url = "https://sourceware.org/ml/systemtap/2011-q1/msg00244.html.",
+    note = {"accessed in 15-March-2017"},
+}
+
+@inproceedings{categorizing_system_behaviour_raja,
+    author = "Raja R. Sambasivan, Alice X. Zheng, Eno Thereska, Gregory R. Ganger",
+    title = "Categorizing and differencing system behaviours",
+    booktitle  = "SIGPLAN '82 Proceedings of the 1982 SIGPLAN symposium on Compiler construction",
+    year = 2007
+}
+
+@INPROCEEDINGS{matni,
+author={G. Matni and M. Dagenais},
+booktitle={2009 Canadian Conference on Electrical and Computer Engineering},
+title={Automata-based approach for kernel trace analysis},
+year={2009},
+pages={970-973},
+keywords={automata theory;finite state machines;languages;operating system kernels;program diagnostics;automata-based approach;checker;kernel trace analysis;off-line analyzer;operating system;state machine language;Debugging;Floods;Instruments;Intrusion detection;Kernel;Linux;Open source software;Operating systems;Performance analysis;Runtime},
+doi={10.1109/CCECE.2009.5090273},
+ISSN={0840-7789},
+month={May},}
+
+
+@misc{behavior_abstraction,
+author="Beaucamps, Philippe and Gnaedig, Isabelle and Marion, Jean-Yves", editor="Barringer, Howard and Falcone, Ylies and Finkbeiner, Bernd and Havelund, Klaus and Lee, Insup and Pace, Gordon and Ro{\c{s}}u, Grigore and Sokolsky, Oleg and Tillmann, Nikolai", 
+title="Behavior Abstraction in Malware Analysis",
+bookTitle="Runtime Verification: First International Conference, RV 2010, St. Julians, Malta, November 1-4, 2010. Proceedings",
+year="2010",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="168--182",
+isbn="978-3-642-16612-9",
+doi="10.1007/978-3-642-16612-9_14",
+url="http://dx.doi.org/10.1007/978-3-642-16612-9_14"
+}
+% P. Barham, R. Isaacs, R. Mortier, and D. Narayanan. Magpie: Online modelling and performance-aware systems. In HOTOS, pages 79–84. USENIX Association, 2003
+
+
+@inproceedings{Fonseca2007XPN19734301973450,
+ author = {Fonseca, Rodrigo and Porter, George and Katz, Randy H. and Shenker, Scott and Stoica, Ion},
+ title = {X-trace: A Pervasive Network Tracing Framework},
+ booktitle = {Proceedings of the 4th USENIX Conference on Networked Systems Design \&\#38; Implementation},
+ series = {NSDI'07},
+ year = {2007},
+ location = {Cambridge, MA},
+ pages = {20--20},
+ numpages = {1},
+ url = {http://dl.acm.org/citation.cfm?id=1973430.1973450},
+ acmid = {1973450},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@article{Ibidunmoye2015PAD28086872791120,
+ author = {Ibidunmoye, Olumuyiwa and Hern\'{a}ndez-Rodriguez, Francisco and Elmroth, Erik},
+ title = {Performance Anomaly Detection and Bottleneck Identification},
+ journal = {ACM Comput. Surv.},
+ issue_date = {September 2015},
+ volume = {48},
+ number = {1},
+ month = jul,
+ year = {2015},
+ issn = {0360-0300},
+ pages = {4:1--4:35},
+ articleno = {4},
+ numpages = {35},
+ url = {http://doi.acm.org/10.1145/2791120},
+ doi = {10.1145/2791120},
+ acmid = {2791120},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Systems performance, bottleneck detection, performance anomaly detection, performance problem identification},
+} 
+
+
+@article{Blackburn2016TWT29822142983574,
+ author = {Blackburn, Stephen M. and Diwan, Amer and Hauswirth, Matthias and Sweeney, Peter F. and Amaral, Jos{\'e} Nelson and Brecht, Tim and Bulej, Lubom\'{\i}r and Click, Cliff and Eeckhout, Lieven and Fischmeister, Sebastian and Frampton, Daniel and Hendren, Laurie J. and Hind, Michael and Hosking, Antony L. and Jones, Richard E. and Kalibera, Tomas and Keynes, Nathan and Nystrom, Nathaniel and Zeller, Andreas},
+ title = {The Truth, The Whole Truth, and Nothing But the Truth: A Pragmatic Guide to Assessing Empirical Evaluations},
+ journal = {ACM Trans. Program. Lang. Syst.},
+ issue_date = {October 2016},
+ volume = {38},
+ number = {4},
+ month = oct,
+ year = {2016},
+ issn = {0164-0925},
+ pages = {15:1--15:20},
+ articleno = {15},
+ numpages = {20},
+ url = {http://doi.acm.org/10.1145/2983574},
+ doi = {10.1145/2983574},
+ acmid = {2983574},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Experimental evaluation, experimentation, observation study},
+} 
+ 
+@misc{Dapper,
+    author = "Benjamin H. Sigelman, Luiz Andre Barroso, Mike Burrows, Pat Stephenson, Manoj Plakal, Donald Beaver, Saul Jaspan, Chandan Shanbhag.",
+    title = "Dapper, a large-scale distributed tracing infrastructure",
+	note = "[Online; accessed 05-January-2017]",
+    year = 2008
+}
+
+@misc{uftrace,
+    author = "Namhyung Kim",
+    title = "Uftrace",
+    url = "https://github.com/namhyung/uftrace",
+    year = 2017,
+    note = {"accessed in 15-March-2017"},
+}
+
+@inproceedings{process_control,
+ author = {Nguyen, Thanh H.D. and Adams, Bram and Jiang, Zhen Ming and Hassan, Ahmed E. and Nasser, Mohamed and Flora, Parminder},
+ title = {Automated Detection of Performance Regressions Using Statistical Process Control Techniques},
+ booktitle = {Proceedings of the 3rd ACM/SPEC International Conference on Performance Engineering},
+ series = {ICPE '12},
+ year = {2012},
+ isbn = {978-1-4503-1202-8},
+ location = {Boston, Massachusetts, USA},
+ pages = {299--310},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2188286.2188344},
+ doi = {10.1145/2188286.2188344},
+ acmid = {2188344},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {load testing, performance engineering, statistical control technique},
+}
+@inproceedings{TraceFile,
+ author = {Weber, Matthias and Brendel, Ronny and Brunst, Holger},
+ title = {Trace File Comparison with a Hierarchical Sequence Alignment Algorithm},
+ booktitle = {Proceedings of the 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications},
+ series = {ISPA '12},
+ year = {2012},
+ isbn = {978-0-7695-4701-5},
+ pages = {247--254},
+ numpages = {8},
+ url = {http://dx.doi.org/10.1109/ISPA.2012.40},
+ doi = {10.1109/ISPA.2012.40},
+ acmid = {2357581},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {performance analysis, comparison, sequence alignment, tracing},
+} 
+
+@article{stardust,
+ author = {Thereska, Eno and Salmon, Brandon and Strunk, John and Wachs, Matthew and Abd-El-Malek, Michael and Lopez, Julio and Ganger, Gregory R.},
+ title = {Stardust: Tracking Activity in a Distributed Storage System},
+ journal = {SIGMETRICS Perform. Eval. Rev.},
+ issue_date = {June 2006},
+ volume = {34},
+ number = {1},
+ month = jun,
+ year = {2006},
+ issn = {0163-5999},
+ pages = {3--14},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1140103.1140280},
+ doi = {10.1145/1140103.1140280},
+ acmid = {1140280},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Ursa Minor, end-to-end tracing, request causal chain},
+} 
+
+ @misc{ibm_knowledge_center,
+    author = "BM Knowledge Center",
+    title = "Dynamic and static instrumentation",
+    howpublished={\url{https://www.ibm.com/support/knowledgecenter/SS8PJ7_8.0.4/com.ibm.rational.llc.ui.doc/topics/c_dynstat_instrument.html}},
+    year = 2008
+}
+
+@inproceedings{6,
+  author =	 "  Eno Thereska, Brandon Salmon, John Strunk, Matthew Wachs, Michael Abd-El-Malek, Julio Lopez, Gregory R. Ganger",
+  title =	 "Stardust, tracking activity in a distributed storage system",
+  booktitle  = "SIGMETRICS, 2006.",
+  year =	2006
+}
+
+
+@misc{gnu,
+    author = "GNU",
+    title = "GDB",
+    url = " https://www.gnu.org/software/gdb/",
+    note = {Accessed: 2017-09-30},
+}
+
+@inproceedings{debugging_cluster,
+  author =	 " Martin Bligh, Mathieu Desnoyers, Rebecca Schultz",
+  title =	 "Linux kernel debugging on google sized clusters",
+  booktitle  = "OLS (Ottawa Linux Symposium)",
+  pages = {29–40},
+  year =	2007
+}
+
+
+ @inproceedings{43,
+  author =	 " Abdelwahab Hamou-Lhadj and Timothy Lethbridge",
+  title =	 "Summarizing the Content of Large Traces to Facilitate the Understanding Of the Behaviour of a Software System",
+  booktitle  = "14th IEEE International Conference on Program Comprehension",
+  pages = {29–40},
+  year =	2006
+}
+
+ @inproceedings{45,
+  author =	 " Vijay Krishna Palepu and James A. Jones",
+  title =	 "Visualizing Constituent Behaviors within Executions",
+  booktitle  = " First IEEE Working Conference on Software Visualization (VISSOFT)",
+  year =	2013
+}
+
+ @inproceedings{46,
+  author =	 " Fang Deng and Nicholas DiGiuseppe and James A. Jones",
+  title =	 "Constellation visualization: Augmenting program dependence with dynamic information",
+  booktitle  = " In International Workshop on Visualizing Software for Understanding and Analysis",
+  pages = { 1–8},
+  year =	2011
+}
+
+ @inproceedings{49,
+  author =	 " Paul Barham, Austin Donnelly, Rebecca Isaacs, Richard Mortier",
+  title =	 "Using Magpie to request extraction and workload modelling",
+  booktitle  = " Proceeding OSDI'04 Proceedings of the 6th conference on Symposium on Operating Systems Design & Implementation - Volume 6.",
+  pages = {18-18},
+  year =	2004
+}
+
+ @inproceedings{50,
+  author =	 "  Mike Y. Chen, Anthony Accardi, Emre Kıcıman, Jim Lloyd, Dave Patterson, Armando Fox, Eric Brewer",
+  title =	 "Path-Based Failure and Evolution Management.",
+  booktitle  = " Proceeding OSDI'04 Proceedings of the 6th conference on Symposium on Operating Systems Design & Implementation - Volume 1",
+  pages = {23-23},
+  year =	2004
+}
+
+ @inproceedings{52,
+  author =	 "  Thanh H. D. Nguyen, Bram Adams,. Zhen Ming Jiang,  Ahmed E. Hassan, Mohamed Nasser, Parminder Flora.",
+  title =	 "Automated Detection of Performance Regressions Using Statistical Process Control Technique",
+  booktitle  = " Proceeding ICPE '12 Proceedings of the 3rd ACM/SPEC International Conference on Performance Engineering ",
+  pages = {299-310},
+  year =	2012
+}
+
+ @inproceedings{53,
+  author =	 " I. Cohen, M. Goldszmidt, T. Kelly, J. Symons, and J. S. Chase.",
+  title =	 "Correlating instrumentation data to system states: a building block for automated diagnosis and control. USENIX Association.",
+  booktitle  = "  In Symposium on Operating Systems Design Implementation",
+  pages = {231–244},
+  year =	2004
+}
+@inproceedings{54,
+  author =	 "Matthias Weber and Ronny Brendel and Holger Brunst",
+  title =	 "Trace File Comparison with a Hierarchical Sequence Alignment Algorithm",
+  booktitle  = "IEEE 10th International Symposium on Parallel and Distributed Processing with Applications",
+  year =	 2012
+}
+
+% @inproceedings{56,
+%   author =	 "lya Yanok and Nathaniel Nystrom",
+%   title =	 "Tapir: a language for verified OS kernel probes",
+%   booktitle  = "PLOS’15 October",
+%   pages = {33-38},
+%   year =	2015
+% }
+
+ @ARTICLE{59,
+  author =	 {Dominique Toupin},
+  title =	 {Using tracing to diagnose or monitor systems.},
+  journal =	 {IEEE software},
+  year =	 {2011},
+  volume =	 {28},
+  number =	 {1},
+  
+ }
+ 
+  @inproceedings{60,
+  author =	 "Yasuhiro Endo and Margo Seltze",
+  title =	 "Improving Interactive Performance Using TIPME",
+  booktitle  = "ACM SIGMETRICS international conference on Measurement and modeling of computer systems",
+  pages = {240-251},
+  year =	2000
+}
+
+@INPROCEEDINGS{model_prob,
+author={J. Gao and G. Jiang and H. Chen and J. Han},
+booktitle={2009 29th IEEE International Conference on Distributed Computing Systems},
+title={Modeling Probabilistic Measurement Correlations for Problem Determination in Large-Scale Distributed Systems},
+year={2009},
+pages={623-630},
+keywords={Markov processes;distributed processing;large-scale systems;Markov properties;computer systems;large-scale distributed systems;probabilistic measurement correlations;problem determination;system problem detection;system problem diagnosis;transition probability model;Distributed computing;Distributed databases;Event detection;Large-scale systems;Modeling;Monitoring;National electric code;Operating systems;Particle measurements;Time measurement},
+doi={10.1109/ICDCS.2009.56},
+ISSN={1063-6927},
+month={June},
+}
+
+@article{blueprint,
+  author =	 " Alexandre Bergel, Felipe Banados, Romain Robbes, and Walter Binder",
+  title =	 "Execution profiling blueprints. Software: Practice and Experience",
+  journal  = "SOFTWARE—PRACTICE AND EXPERIENCE 00:1–29",
+  pages = {231–244},
+  year =	2010,
+  publisher={IEEE}
+}
+
+ @inproceedings{65,
+  author =	 "Mike Chen and Alice X. Zheng and Jim Lloyd and Michael I. Jordan and Eric Brewer",
+  title =	 "Failure Diagnosis Using Decision Trees",
+  booktitle  = "Proceeding ICAC '04 Proceedings of the First International Conference on Autonomic Computing",
+  pages = {36-43},
+  year =2004 
+}
+
+@BOOK{book_testing,
+  author = {Glenford J. Myers},
+  title =	 {The art of software testing. 2nd Ed},
+  publisher =	 {Wiley & Sons},
+  year =	 {2012},
+}
+ 
+ 
+@inproceedings{67,
+  author =	 "Mike Chen and Alice X. Zheng and Jim Lloyd and Michael I. Jordan and Eric Brewer",
+  title =	 "Failure Diagnosis Using Decision Trees",
+  booktitle  = "Proceeding ICAC '04 Proceedings of the First International Conference on Autonomic Computing",
+  pages = {36-43},
+  year =2004 
+}
+
+@inproceedings{cloudPD,
+ author = {Sharma, Bikash and Jayachandran, Praveen and Verma, Akshat and Das, Chita R.},
+ title = {CloudPD: Problem Determination and Diagnosis in Shared Dynamic Clouds},
+ booktitle = {Proceedings of the 2013 43rd Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN)},
+ series = {DSN '13},
+ year = {2013},
+ isbn = {978-1-4673-6471-3},
+ pages = {1--12},
+ numpages = {12},
+ url = {http://dx.doi.org/10.1109/DSN.2013.6575298},
+ doi = {10.1109/DSN.2013.6575298},
+ acmid = {2515181},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {Measurement,Correlation,Context,Engines,Biological system modeling,Monitoring,Servers,Hadoop MapReduce,Cloud,Problem Determination,Fault Diagnosis,Virtualization,Performance},
+} 
+
+@inproceedings{parcs,
+ author = {Mostafa, Nagy and Krintz, Chandra},
+ title = {Tracking Performance Across Software Revisions},
+ booktitle = {Proceedings of the 7th International Conference on Principles and Practice of Programming in Java},
+ series = {PPPJ '09},
+ year = {2009},
+ isbn = {978-1-60558-598-7},
+ location = {Calgary, Alberta, Canada},
+ pages = {162--171},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1596655.1596682},
+ doi = {10.1145/1596655.1596682},
+ acmid = {1596682},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {calling context tree, performance-aware revision control, profiling},
+}
+
+@article{adaptative_burst,
+ author = {Zhuang, Xiaotong and Serrano, Mauricio J. and Cain, Harold W. and Choi, Jong-Deok},
+ title = {Accurate, Efficient, and Adaptive Calling Context Profiling},
+ journal = {SIGPLAN Not.},
+ issue_date = {June 2006},
+ volume = {41},
+ number = {6},
+ month = jun,
+ year = {2006},
+ issn = {0362-1340},
+ pages = {263--271},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/1133255.1134012},
+ doi = {10.1145/1133255.1134012},
+ acmid = {1134012},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {adaptive, call graph, calling context, calling context tree, java virtual machine, profiling},
+} 
+@INPROCEEDINGS{brain,
+author={V. K. Palepu and J. A. Jones},
+booktitle={2013 First IEEE Working Conference on Software Visualization (VISSOFT)},
+title={Visualizing constituent behaviors within executions},
+year={2013},
+pages={1-4},
+keywords={computer animation;data flow analysis;data visualisation;program visualisation;source coding;THE BRAIN;behavioral feature production;constituent behavior visualization;dynamic control flow;modular source-code structures;neural imaging;program activity;software features;source code clustered visualization;user-controlled animations;Animation;Data visualization;Force;Layout;Software;Visualization;XML},
+doi={10.1109/VISSOFT.2013.6650537},
+month={Sept},}
+
+@inproceedings{70,
+  author =	 " Daniel Jackson, David A. Ladd",
+  title =	 "SemanticDiff:A Tool for Summarizing the Effects of Modifications",
+  booktitle  = "International Conference on Software Maintenance",
+  pages = {243 - 252},
+  year =	1994
+}
+ @phdthesis{das_detection,
+  author =	 "Kaustav Das.",
+  title =	 "{Detecting patterns of anomalies}",
+  school =	 "{Carnegie Mellon University}",
+  year =	 2009,
+  month =	 mar
+}
+
+@article{Chandola2009ADS15418801541882,
+ author = {Chandola, Varun and Banerjee, Arindam and Kumar, Vipin},
+ title = {Anomaly Detection: A Survey},
+ journal = {ACM Comput. Surv.},
+ issue_date = {July 2009},
+ volume = {41},
+ number = {3},
+ month = jul,
+ year = {2009},
+ issn = {0360-0300},
+ pages = {15:1--15:58},
+ articleno = {15},
+ numpages = {58},
+ url = {http://doi.acm.org/10.1145/1541880.1541882},
+ doi = {10.1145/1541880.1541882},
+ acmid = {1541882},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Anomaly detection, outlier detection},
+} 
+
+@MISC{Graham82gprofa,
+    author = {Susan L. Graham and Peter B. Kessler and Marshall K. McKusick},
+    title = {gprof: a Call Graph Execution Profiler},
+    year = {1982}
+}
+
+@MISC{ind_perspective,
+  author = {BA Wichmann, AA. Canning, D.L. Clutterbuck, LA Winsborrow, N.J. Ward and D.W.R. Marsh },
+  title = {Industrial perspective on static analysis },
+  howpublished = {\url{https://www.owasp.org/index.php/Source_Code_Analysis_Tools}},
+  note = {Software Engineering Journal March 1995 },
+  year = {1995}
+}
+
+
+@MISC{find_rate,
+  author = {Markus Sprunck},
+  title = {Findbugs - Static Code Analysis of Java},
+  howpublished = {\url{http://www.methodsandtools.com/tools/findbugs.php}},
+  note = {Methods and tools Magazine },
+  year = {2012}
+}
+
+@MISC{source_code_analysis,
+  author = {Owasp},
+  title = {Source Code Analysis Tools},
+  howpublished = {\url{https://www.owasp.org/index.php/Source_Code_Analysis_Tools}},
+  note = {Accessed: 2017-09-30},
+  year = {2017}
+}
+
+@MISC{pmd_tool,
+  author = {Sourceforge},
+  title = {PMD },
+  howpublished = {\url{https://pmd.github.io/}},
+  note = {Accessed: 2017-09-30},
+  year = {2017}
+}
+
+@MISC{better_code_hub,
+    author = {Software Improvement Group},
+    title = {Better Code Hub},
+    howpublished = {\url{https://bettercodehub.com/}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+    
+}
+
+@MISC{find_bugs,
+    author = {Sourceforge},
+    title = {FindBugs},
+    howpublished = {\url{http://findbugs.sourceforge.net/}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+}
+
+
+@MISC{oprofile,
+    author = {Sourceforge},
+    title = {Oprofile},
+    howpublished = {\url{http://oprofile.sourceforge.net/doc/introduction.html}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+}
+
+@MISC{lttng,
+    author = {Efficios},
+    title = {Doc LTTng},
+    howpublished = {\url{http://lttng.org/docs/v2.9/#doc-tracing-session-mode}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+} 
+@MISC{paraver,
+    author = {Barcelo SuperComputing Center},
+    title = {Paraver},
+    howpublished = {\url{https://tools.bsc.es/paraver}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+} 
+
+@MISC{ebpf,
+    author = {Michael Kerrisk},
+    title = {BPF},
+    howpublished = {\url{http://man7.org/linux/man-pages/man2/bpf.2.html}},
+    note = {Accessed: 2017-04-30},
+    year = {2016}
+} 
+
+@MISC{ocaml,
+    author = {Keith Waclena},
+    title = {Pattern Matching},
+    howpublished = {\url{http://www2.lib.uchicago.edu/keith/ocaml-class/pattern-matching.html}},
+    note = {Accessed: 2017-04-30},
+    year = {2006}
+}
+
+@Inbook{Fredrikson2011,
+author="Fredrikson, Matthew
+and Christodorescu, Mihai
+and Jha, Somesh",
+editor="Bj{\o}rner, Nikolaj
+and Sofronie-Stokkermans, Viorica",
+title="Dynamic Behavior Matching: A Complexity Analysis and New Approximation Algorithms",
+bookTitle="Automated Deduction -- CADE-23: 23rd International Conference on Automated Deduction, Wroc{\l}aw, Poland, July 31 - August 5, 2011. Proceedings",
+year="2011",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="252--267",
+isbn="978-3-642-22438-6",
+doi="10.1007/978-3-642-22438-6_20",
+url="http://dx.doi.org/10.1007/978-3-642-22438-6_20"
+}
+
+@article{rigorous_statistical,
+ author = {Georges, Andy and Buytaert, Dries and Eeckhout, Lieven},
+ title = {Statistically Rigorous Java Performance Evaluation},
+ journal = {SIGPLAN Not.},
+ issue_date = {October 2007},
+ volume = {42},
+ number = {10},
+ month = oct,
+ year = {2007},
+ issn = {0362-1340},
+ pages = {57--76},
+ numpages = {20},
+ url = {http://doi.acm.org/10.1145/1297105.1297033},
+ doi = {10.1145/1297105.1297033},
+ acmid = {1297033},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {benchmarking, data analysis, java, methodology, statistics},
+}
+@inproceedings{Fadel,
+ author = {Klaib, Ahmad Fadel and Osborne, Hugh},
+ title = {RSMA Matching Algorithm for Searching Biological Sequences},
+ booktitle = {Proceedings of the 6th International Conference on Innovations in Information Technology},
+ series = {IIT'09},
+ year = {2009},
+ isbn = {978-1-4244-5698-7},
+ location = {AI-Ain, United Arab Emirates},
+ pages = {190--194},
+ numpages = {5},
+ url = {http://dl.acm.org/citation.cfm?id=1802274.1802314},
+ acmid = {1802314},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+
+@inproceedings{Pinpoint,
+ author = {Chen, Mike Y. and Kiciman, Emre and Fratkin, Eugene and Fox, Armando and Brewer, Eric},
+ title = {Pinpoint: Problem Determination in Large, Dynamic Internet Services},
+ booktitle = {Proceedings of the 2002 International Conference on Dependable Systems and Networks},
+ series = {DSN '02},
+ year = {2002},
+ isbn = {0-7695-1597-5},
+ pages = {595--604},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=647883.738238},
+ acmid = {738238},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+@MISC{ebpf_maps,
+    author = {Brendan Gregg},
+    title = {eBPF: One Small Step},
+    howpublished = {\url{http://www.brendangregg.com/blog/2015-05-15/ebpf-one-small-step.html}},
+    note = {Accessed: 2017-04-30},
+    year = {2015}
+} 
+
+@MISC{chromium_project,
+    author = {Google},
+    title = {Chromium Project},
+    howpublished = {\url{https://www.chromium.org/}},
+    note = {Accessed: 2017-04-30},
+    year = {2013}
+} 
+
+@MISC{trace_chromium,
+    author = {Google Chromium},
+    title = {Tracing Ecosystem Explainer},
+    howpublished = {\url{https://docs.google.com/document/d/1QADiFe0ss7Ydq-LUNOPpIf6z4KXGuWs_ygxiJxoMZKo/edit}},
+    note = {Accessed: 2017-04-30},
+    year = {2015}
+} 
+
+
+@MISC{dyninst,
+    author = {University of Maryland and University of Wisconsin},
+    title = {DynInst},
+    howpublished = {\url{http://www.dyninst.org/}},
+    note = {Accessed: 2017-04-30},
+    year = {2015}
+} 
+@MISC{ftrace_red,
+    author = {Red Hat Inc},
+    title = {ftrace - Function Tracer},
+    howpublished = {\url{https://www.kernel.org/doc/Documentation/trace/ftrace.txt}},
+    note = {Accessed: 2017-04-30},
+    year = {2015}
+} 
+
+@MISC{Montreal_thelttng,
+    author = {Mathieu Desnoyers and Michel Dagenais},
+    title = {The LTTng tracer: A low impact performance and behavior monitor for GNU/Linux Mathieu Desnoyers},
+    year = {2006}
+}
+@article{Luk2005PBC10649781065034,
+ author = {Luk, Chi-Keung and Cohn, Robert and Muth, Robert and Patil, Harish and Klauser, Artur and Lowney, Geoff and Wallace, Steven and Reddi, Vijay Janapa and Hazelwood, Kim},
+ title = {Pin: Building Customized Program Analysis Tools with Dynamic Instrumentation},
+ journal = {SIGPLAN Not.},
+ issue_date = {June 2005},
+ volume = {40},
+ number = {6},
+ month = jun,
+ year = {2005},
+ issn = {0362-1340},
+ pages = {190--200},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1064978.1065034},
+ doi = {10.1145/1064978.1065034},
+ acmid = {1065034},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {dynamic compilation, instrumentation, program analysis tools},
+} 
+
+@inproceedings{decision_tree,
+ author = {Zheng, Alice X. and Lloyd, Jim and Brewer, Eric},
+ title = {Failure Diagnosis Using Decision Trees},
+ booktitle = {Proceedings of the First International Conference on Autonomic Computing},
+ series = {ICAC '04},
+ year = {2004},
+ isbn = {0-7695-2114-2},
+ pages = {36--43},
+ numpages = {8},
+ url = {http://dl.acm.org/citation.cfm?id=1078026.1078407},
+ acmid = {1078407},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+
+@inproceedings{magpie,
+ author = {Barham, Paul and Donnelly, Austin and Isaacs, Rebecca and Mortier, Richard},
+ title = {Using Magpie for Request Extraction and Workload Modelling},
+ booktitle = {Proceedings of the 6th Conference on Symposium on Opearting Systems Design \& Implementation - Volume 6},
+ series = {OSDI'04},
+ year = {2004},
+ location = {San Francisco, CA},
+ pages = {18--18},
+ numpages = {1},
+ url = {http://dl.acm.org/citation.cfm?id=1251254.1251272},
+ acmid = {1251272},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+@INPROCEEDINGS{constellation,
+author={F. Deng and N. DiGiuseppe and J. A. Jones},
+booktitle={2011 6th International Workshop on Visualizing Software for Understanding and Analysis (VISSOFT)},
+title={Constellation visualization: Augmenting program dependence with dynamic information},
+year={2011},
+pages={1-8},
+keywords={data visualisation;graph theory;meta data;pattern clustering;software engineering;constellation visualization;dynamic run-time information;problem-specific meta-data utilization;problem-specific meta-data visualization;program dependence augmentation;scalable statement-level visualization;software-engineering tasks;statement-level code relations;system-dependence-graph model;visual cluster identification;visual cluster interpretation;Color;Context;Layout;Scalability;Software;Springs;Visualization},
+doi={10.1109/VISSOF.2011.6069453},
+month={Sept},}
+
+@BOOK{data_mining_book,
+  title =	 {Data Mining: Practical Machine Learning Tools and Techniques with Java Implementations. 2nd Edition},
+  publisher =	 {Morgan Kaufmann},
+  year =	 {2003},
+  author =	 {Ian H. Written and Eibe Frank},
+}
+ 
+@inproceedings{19,
+  author =	 "Francis Giraldeau and Julien Desfossez and Mathieu Desnoyers and Michel Dagenais",
+  title =	 "Recovering system metrics from kernel trace",
+  booktitle =	 "Linux Symposium , vol.190, ",
+  pages =	 {p. 109115, 2011},
+  year =	 2014
+}
+ @inproceedings{77,
+  author =	 "Francis Giraldeau and Julien Desfossez and Mathieu Desnoyers and Michel Dagenais",
+  title =	 "Recovering system metrics from kernel trace",
+  booktitle =	 "Linux Symposium , vol.190, ",
+  pages =	 {p. 109115, 2011},
+  year =	 2014
+}
+
+@inproceedings{Weber2012TFC23574872357581,
+ author = {Weber, Matthias and Brendel, Ronny and Brunst, Holger},
+ title = {Trace File Comparison with a Hierarchical Sequence Alignment Algorithm},
+ booktitle = {Proceedings of the 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications},
+ series = {ISPA '12},
+ year = {2012},
+ isbn = {978-0-7695-4701-5},
+ pages = {247--254},
+ numpages = {8},
+ url = {http://dx.doi.org/10.1109/ISPA.2012.40},
+ doi = {10.1109/ISPA.2012.40},
+ acmid = {2357581},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {performance analysis, comparison, sequence alignment, tracing},
+} 
+@inproceedings{78,
+  author =	 "Bikash Sharma ; Praveen Jayachandran ; Akshat Verma ; Chita R. Das",
+  title =	 " CloudPD: Problem determination and diagnosis in shared dynamic clouds",
+  booktitle =	 " 43rd Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN)",
+  year =	 2013
+}
+
+@inproceedings{Jackson1994SDT645543655704,
+ author = {Jackson, Daniel and Ladd, David A.},
+ title = {Semantic Diff: A Tool for Summarizing the Effects of Modifications},
+ booktitle = {Proceedings of the International Conference on Software Maintenance},
+ series = {ICSM '94},
+ year = {1994},
+ isbn = {0-8186-6330-8},
+ pages = {243--252},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=645543.655704},
+ acmid = {655704},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+}
+
+@ARTICLE{90,
+  author =	 {Stephen M. Blackburn, Amer Diwan, Matthias Hauswirth, Peter F. Sweeney, José Nelson Amaral, Tim Brecht, Lubomír Bulej, Cliff Click, Lieven Eeckhout, Sebastian Fischmeister, Daniel Frampton, Laurie J. Hendren, 	Michael Hind, Antony L. Hosking, Richard E. Jones, Tomas Kalibera, Nathan Keynes, Nathaniel Nystrom, Andreas Zeller},
+  title =	 {The Truth, The Whole Truth, and Nothing But the Truth: A Pragmatic Guide to Assessing Empirical Evaluations},
+  journal =	 {ACM Transactions on Programming Languages and Systems (TOPLAS)},
+  year =	 {2016},
+  volume =	 {38},
+  number =	 {4},
+  month =	 oct,
+  abstract =	 {An unsound claim can misdirect a field, encouraging the pursuit of unworthy ideas and the abandonment of promising ideas. An inadequate description of a claim can make it difficult to reason about the claim, for example to determine whether the claim is sound. Many practitioners will acknowledge the threat of un- sound claims or inadequate descriptions of claims to their field. We believe that this situation is exacerbated and even encouraged by the lack of a systematic approach to exploring, exposing, and addressing the source of unsound claims and poor exposition.
+  This paper proposes a framework that identifies three sins of reasoning that lead to unsound claims and two sins of exposition that lead to poorly described claims. Sins of exposition obfuscate the objective of determining whether or not a claim is sound, while sins of reasoning lead directly to unsound claims.
+  Our framework provides practitioners with a principled way of critiquing the integrity of their own work and the work of others. We hope that this will help individuals conduct better science and encourage a cultural shift in our research community to identify and promulgate sound claims.}
+ }
+ 
+@article{trace_abstraction_2,
+ author = {Ezzati-Jivan, Naser and Dagenais, Michel R.},
+ title = {A Framework to Compute Statistics of System Parameters from Very Large Trace Files},
+ journal = {SIGOPS Oper. Syst. Rev.},
+ issue_date = {January 2013},
+ volume = {47},
+ number = {1},
+ month = jan,
+ year = {2013},
+ issn = {0163-5980},
+ pages = {43--54},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2433140.2433151},
+ doi = {10.1145/2433140.2433151},
+ acmid = {2433151},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Linux kernel, statistics, system metrics, trace, trace abstraction},
+} 
+@article{lasso,
+author = {Changliang Zou and Wei Jiang and Fugee Tsung},
+title = {A LASSO-Based Diagnostic Framework for Multivariate Statistical Process Control},
+journal = {Technometrics},
+volume = {53},
+number = {3},
+pages = {297-309},
+year = {2011},
+doi = {10.1198/TECH.2011.10034},
+URL = { 
+        http://dx.doi.org/10.1198/TECH.2011.10034
+},
+eprint = { 
+        http://dx.doi.org/10.1198/TECH.2011.10034
+}
+}
+@inproceedings{perfdiff,
+ author = {Zhuang, Xiaotong and Kim, Suhyun and Serrano, Mauri io and Choi, Jong-Deok},
+ title = {Perfdiff: A Framework for Performance Difference Analysis in a Virtual Machine Environment},
+ booktitle = {Proceedings of the 6th Annual IEEE/ACM International Symposium on Code Generation and Optimization},
+ series = {CGO '08},
+ year = {2008},
+ isbn = {978-1-59593-978-4},
+ location = {Boston, MA, USA},
+ pages = {4--13},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/1356058.1356060},
+ doi = {10.1145/1356058.1356060},
+ acmid = {1356060},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {performance comparison, virtual machine},
+} 
+@article{discrete_bayesian,
+ author = {Bielza, Concha and Larra\~{n}aga, Pedro},
+ title = {Discrete Bayesian Network Classifiers: A Survey},
+ journal = {ACM Comput. Surv.},
+ issue_date = {July 2014},
+ volume = {47},
+ number = {1},
+ month = jul,
+ year = {2014},
+ issn = {0360-0300},
+ pages = {5:1--5:43},
+ articleno = {5},
+ numpages = {43},
+ url = {http://doi.acm.org/10.1145/2576868},
+ doi = {10.1145/2576868},
+ acmid = {2576868},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Bayesian multinets, Bayesian network, Markov blanket, Supervised classification, feature subset selection, generative and discriminative classifiers, naive Bayes},
+} 
+
+@inproceedings{pattern_based,
+ author = {Idris, Maher and Mehrabian, Ali and Hamou-Lhadj, Abdelwahab and Khoury, Richard},
+ title = {Pattern-based Trace Correlation Technique to Compare Software Versions},
+ booktitle = {Proceedings of the Third International Conference on Autonomous and Intelligent Systems},
+ series = {AIS'12},
+ year = {2012},
+ isbn = {978-3-642-31367-7},
+ location = {Aveiro, Portugal},
+ pages = {159--166},
+ numpages = {8},
+ url = {http://dx.doi.org/10.1007/978-3-642-31368-4_19},
+ doi = {10.1007/978-3-642-31368-4_19},
+ acmid = {2352431},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+ keywords = {dynamic analysis, software evolution, software maintenance, trace correlation},
+} 
+
+@MISC{weka,
+    author = {University of Waikato},
+    title = {Weka},
+    howpublished = {\url{http://www.cs.waikato.ac.nz/ml/weka/}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+}
+@MISC{dynamoRIO,
+    author = {VMware},
+    title = {DynamoRIO},
+    howpublished = {\url{http://www.dynamorio.org/}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+}
+
+@INPROCEEDINGS{Diota,
+    author = {Jonas Maebe and Michiel Ronsse and Koen De Bosschere},
+    title = {DIOTA: Dynamic instrumentation, optimization and transformation of applications},
+    booktitle = {IN PROC. 4TH WORKSHOP ON BINARY TRANSLATION (WBT’02)},
+    year = {2002},
+    publisher = {}
+}
+
+@inproceedings{Strata,
+ author = {Scott, K. and Kumar, N. and Velusamy, S. and Childers, B. and Davidson, J. W. and Soffa, M. L.},
+ title = {Retargetable and Reconfigurable Software Dynamic Translation},
+ booktitle = {Proceedings of the International Symposium on Code Generation and Optimization: Feedback-directed and Runtime Optimization},
+ series = {CGO '03},
+ year = {2003},
+ isbn = {0-7695-1913-X},
+ location = {San Francisco, California, USA},
+ pages = {36--47},
+ numpages = {12},
+ url = {http://dl.acm.org/citation.cfm?id=776261.776265},
+ acmid = {776265},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+}
+
+@article{Valgrind,
+ author = {Nethercote, Nicholas and Seward, Julian},
+ title = {Valgrind: A Framework for Heavyweight Dynamic Binary Instrumentation},
+ journal = {SIGPLAN Not.},
+ issue_date = {June 2007},
+ volume = {42},
+ number = {6},
+ month = jun,
+ year = {2007},
+ issn = {0362-1340},
+ pages = {89--100},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1273442.1250746},
+ doi = {10.1145/1273442.1250746},
+ acmid = {1250746},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Memcheck, Valgrind, dynamic binary analysis, dynamic binary instrumentation, shadow values},
+} 
+
+@TECHREPORT{Vulcan,
+    author = {Andrew Edwards and Hoi Vo and Amitabh Srivastava and Amitabh Srivastava},
+    title = {Vulcan Binary transformation in a distributed environment},
+    institution = {},
+    year = {2001}
+}
+
+http://valgrind.org/
+@MISC{dtrace,
+    author = {Dtrace},
+    title = {About DTrace},
+    howpublished = {\url{http://dtrace.org/blogs/about/}},
+    note = {Accessed: 2017-04-30},
+    year = {2017}
+}
+
+@article{Pin,
+ author = {Luk, Chi-Keung and Cohn, Robert and Muth, Robert and Patil, Harish and Klauser, Artur and Lowney, Geoff and Wallace, Steven and Reddi, Vijay Janapa and Hazelwood, Kim},
+ title = {Pin: Building Customized Program Analysis Tools with Dynamic Instrumentation},
+ journal = {SIGPLAN Not.},
+ issue_date = {June 2005},
+ volume = {40},
+ number = {6},
+ month = jun,
+ year = {2005},
+ issn = {0362-1340},
+ pages = {190--200},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1064978.1065034},
+ doi = {10.1145/1064978.1065034},
+ acmid = {1065034},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {dynamic compilation, instrumentation, program analysis tools},
+} 
+@INPROCEEDINGS{anomaly_detection_grid,
+author={Lingyun Yang and Chuang Liu and Jennifer M. Schopf and Ian Foster},
+booktitle={SC07},
+title={Anomaly Detection and Diagnosis in Grid Environments},
+year={2007},
+pages={10-16},
+month={Nov},
+}
+
+@INPROCEEDINGS{similarity_based,
+author={K. Mohror and K. L. Karavanic},
+booktitle={Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis},
+title={Evaluating similarity-based trace reduction techniques for scalable performance analysis},
+year={2009},
+pages={1-12},
+keywords={data compression;parallel processing;event traces;parallel system;pattern identification;pattern-based method;repeating trace pattern;scalable performance analysis;similarity-based trace reduction techniques;size reduction;trace compression},
+doi={10.1145/1654059.1654115},
+ISSN={2167-4329},
+month={Nov},}
+
+@book{brendan_book,
+    title={Systems performance : enterprise and the cloud},
+    author={Brendan Gregg},
+    isbn={9780198520115},
+    year={2007},
+    publisher={Prentice Hall},
+}
+
+@book{opencv2_book,
+    title={Learning OpenCV 2},
+    author={Gary Bradski and Adrian Kaehler},
+    isbn={9780198520115},
+    year={2007},
+    publisher={O'Reilly Media},
+}
+
+@ARTICLE{gap_statistical,
+    author = {Robert Tibshirani and Guenther Walther and Trevor Hastie},
+    title = {Estimating the number of clusters in a dataset via the Gap statistic},
+    journal = {},
+    year = {2000},
+    volume = {63},
+    pages = {411--423}
+}
+
+@inproceedings{Sambasivan2011DPC19724571972463,
+ author = {Sambasivan, Raja R. and Zheng, Alice X. and De Rosa, Michael and Krevat, Elie and Whitman, Spencer and Stroucken, Michael and Wang, William and Xu, Lianghong and Ganger, Gregory R.},
+ title = {Diagnosing Performance Changes by Comparing Request Flows},
+ booktitle = {Proceedings of the 8th USENIX Conference on Networked Systems Design and Implementation},
+ series = {NSDI'11},
+ year = {2011},
+ location = {Boston, MA},
+ pages = {43--56},
+ numpages = {14},
+ url = {http://dl.acm.org/citation.cfm?id=1972457.1972463},
+ acmid = {1972463},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@ARTICLE{doray_article,
+author={F. Doray and M. Dagenais},
+journal={IEEE Transactions on Parallel and Distributed Systems},
+title={Diagnosing Performance Variations by Comparing Multi-Level Execution Traces},
+year={2017},
+volume={28},
+number={2},
+pages={462-474},
+keywords={data structures;flow graphs;operating systems (computers);program diagnostics;software performance evaluation;task analysis;ECCT;TraceCompare;data structure;enhanced calling context tree;multilevel execution traces;operating system;performance variations diagnosis;task executions;task interactions;threads;Aerospace electronics;Google;History;Instruction sets;Kernel;Libraries;Performance analysis;concurrency;operating systems;software visualization;tracing},
+doi={10.1109/TPDS.2016.2567390},
+ISSN={1045-9219},
+month={Feb},
+}
+@conference{giraldeau-ols2011, title = {Recovering system metrics from kernel trace}, author = {Francis Giraldeau and Julien Desfossez and David Goulet and Mathieu Desnoyers and Michel R. Dagenais}, booktitle = {Linux Symposium 2011}, year = 2011, month = jun }
+ 
+@article{Ezzati-Jivan2013FCS24331402433151,
+ author = {Ezzati-Jivan, Naser and Dagenais, Michel R.},
+ title = {A Framework to Compute Statistics of System Parameters from Very Large Trace Files},
+ journal = {SIGOPS Oper. Syst. Rev.},
+ issue_date = {January 2013},
+ volume = {47},
+ number = {1},
+ month = jan,
+ year = {2013},
+ issn = {0163-5980},
+ pages = {43--54},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2433140.2433151},
+ doi = {10.1145/2433140.2433151},
+ acmid = {2433151},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Linux kernel, statistics, system metrics, trace, trace abstraction},
+} 
+ 
+@inproceedings{naser_abstraction,
+  author =	 "Naser Ezzati-Jivan and Michel Dagenais",
+  title =	 " An  efficient  analysis  approach for  multi-core  system  tracing  data",
+  booktitle =	 " Proceedings  of  the  16th  IASTED  International Conference on Software Engineering and Applications (SEA 2012)",
+  year =	 2012
+}
+
+@aricle{bayes,
+  author =	 "Nir Friedman and Dan Geiger and Moises Goldszmidt",
+  title =	 "Bayesian Network Classifiers",
+  journal =	 {Machine Learning},
+  year =	 {2009},
+  volume =	 {29},
+  pages =	 {131-163},
+  month =	 jan,
+  year = 1997,
+  abstract = {Recent work in supervised learning has shown that a surprisingly simple Bayesian classifier with strong assumptions of independence among features, called naive Bayes, is competitive with state-of-the-art classifiers such as C4.5.  This fact raises the question of whether a classifier with less restrictive assumptions can perform even better. In this paper we evaluate approaches for inducing classifiers from data, based on the theory of learning
+    Bayesian networks.  These networks are factored representations of probability distributions that generalize the naive Bayesian classifier and explicitly represent statements about independence.  Among these approaches we single out a method we call Tree Augmented Naive Bayes (TAN), which outperforms naive Bayes, yet at the same time maintains the computational simplicity (no search involved) and robustness that characterize naive Bayes. We experimentally tested these approaches, using problems from the University of California at Irvine repository, and compared them to C4.5, naive Bayes, and wrapper methods for feature selection}
+}

@@ -1,0 +1,39 @@
+\Chapter{CONCLUSION}\label{sec:Conclusion}
+We conclude this demonstration of the work by summarizing the contributions we have made. Then we present the limitations of our solution and recommend future improvements.
+
+%%
+%%  SYNTHESE DES TRAVAUX
+%%
+\section{Summary of the work}
+The current tools are limited in terms of quantity of data to be analyzed and the so several data mining techniques can be applied to find associations and correlation among executions. This research aims to expand the current models by introducing an automated comparison mechanism. \\
+The contribution through an automate mechanism using an heuristic evaluation to automate grouping techniques. The heuristic evaluation can be built upon several already used algorithms, such as k-means. Different strategies of comparison, such as the percentage comparison might highlight different behaviours of the system in a complementary way.\\
+The proposed solution can compare the groups of executions with different performances and evaluate their inner structure using or not the source code as reference.
+
+
+%%
+%%  LIMITATIONS
+%%
+\section{Objective attainment}\label{sec:Limitations}
+This work aimed to demonstrate the possibility to use automatic methods to reduce considerably the analysis time of performance comparison. The proposed solution, auto grouping mechanism presented in an article, enabled an automatic comparison of groups of executions and comparison of their behavior. Finally, the solution was able to be applied in several case studies demonstrating the effectiveness of the approach regarding to find performance issues with a group comparison strategy and that the challenge overall is surmountable.\\
+%%
+%%  AMELIORATIONS FUTURES
+%%
+\section{Contributions}
+The scientific contributions for this work were summarized in the papers presented as and contains few contributions. \\
+(1) We used an heuristic comparison to automate the current cluster and grouping mechanism without increasing excessively the complexity of those algorithms. Using this strategy, we were able to propose automatic way to compare several executions without necessarily selecting the number of groups that would be compared.\\
+(2) Comparison of several clustering techniques, analyzing their pros and cons. This might be used in the future to improve their cons and improve those methods.\\ 
+(3) We developed the RGG Differential flame graph, which can show differences on the executions in three colors reducing the ambiguity of the comparison of the original DFG. This is an new view that allows comparison of two groups of executions. \\
+(4) In co-authorship we applied Confidence Interval using medians, instead of means, to compare several releases of Chromium software. This technique overpassed the current CI implementations.
+
+\section{Limitations of the solution}
+The auto grouping technique has two main limitations: the causation and the optimal number of groups.
+First, is that association with the group analysis does not necessarily imply in causation, since correlation does not mean causation. A more deep evaluation would be necessary to study the causality and its association with the performance counters in terms of real percentage of representation and causation.\\
+Second limitation in the auto-grouping, as well as group analysis in general, is the optimal number of groups which not necessarily can facilitate the human analysis of the system. A few times the number of groups is particularly large and although the number is optimal, it does not necessarily is the best number in terms of performance analysis.
+
+\section{Future Work}
+In the future it is possible to develop a fully automatic analysis framework, that include trace correlation, comparison and statistical analysis. 
+This work showed the possibility to use fuzzy data, i.e. more than two groups of comparison automatically, however a deep analysis in each metric could be done to verify and measure specifically the impact of each performance variation in the runs in real workloads. 
+An promising area is to use a neural network or other technique to correlate the user space tracing with kernel space tracing could give interesting aspects of performance evaluation. Technique that does not require labeled data can be used also.
+From the implementation part, the solution was implemented focusing in userspace tracing library and can only capture the stack for ELF binaries. Therefore, it should be extended to address other needs such as JIT compilation.
+
+

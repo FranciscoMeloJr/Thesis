@@ -1,0 +1,83 @@
+On this section, we discuss about the solution developed, starting from the data structure, which the work relies, then the algorithms used to do the grouping mechanism, then the cluster algorithm and the overall methodology. \\
+
+  The methodology can be summarized in the following process:\\
+  First, we trace a program using statically or dynamically embedded tracepoints. Then we read the tracing and develop a CCT recording, also the performance metrics. Later, we run the clustering techniques and the association rule, which indicated the possible cause of the performance issue.
+  
+    \subsubsection{Recording of execution}
+    We record the program executing using LTTng, this tracer has low overhead, therefore is adequate for this type of research. 
+    The trace is also recorded with the performance metrics such as instructions, cache-misses, page-faults, and schedule switches by using the perf counters tools in Linux.
+    
+    \subsubsection{Generating the data structure}
+    After the recording in different scenarios, a pre-processing of building a structure for comparison is done, this structure is a enhanced calling context tree. 
+    To do this process, we use trace compare to divide the tracing in segments, delimited using: e.g. in the case of sys\_open, we used systemCallOpen and systemCallExit.
+    In this process we aim to construct comparable information using ECCT (or EDT), which each node represent a call and the information in this call will be within the nodes. A delta of the entry and the exit for each metric is recorded in the node, in a sampling scheme.
+    
+    \subsubsection{Clustering technique}
+    After the data was pre-processed and the tree is built, a mathematical model is done and its behaviour compared to its input can be determined. 
+    
+    \subsubsection{Execution Comparison}
+    With the groups divided the next phase is the comparison among them. There are possible to ways to compare the groups: compare the mean and median for each group or use the Apriori Association described in section \ref{sec:association}.
+    
+\subsection{Data Structure}
+% \textit{Call Graph}\\
+%     The call graph is a useful data representation for control and data flow programs which investigate interprocedural communication (i.e., how procedures exchange information). It contains all the relationships among the procedures in a program and can contain auxiliary information concerning the
+%     data within each procedure and global data shared among procedures \cite{call_graph}.
+
+\textit{Calling Context Tree}\\
+Calling contexts are very important for a wide range of applications such as profiling, debugging, and event logging. Most applications perform expensive \textit{stack walking} to recover contexts\cite{precise}. The resulting contexts are often explicitly represented as a sequence of call sites and hence bulky. The goal of calling context encoding is to uniquely represent the current context of any execution point using a small number of integer identifiers (IDs). This data structure was introduced by \cite{27} and reused by \cite{4}, \cite{28}.
+% \textit{Enhanced Calling Context Tree}\\
+    In this work we aggregate data, related to the performance on the Calling Context Tree, which gives the concept of enhanced structure. The aggregated data is related with the performance metrics, the data is added in the tree nodes and gives the possibility to be analyzed off-line.
+    The Figure \ref{fig:ecct_dt} demonstrates the difference between the dynamic tree and the calling context tree.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.40\textwidth]{figures/dynamic-calling.png}
+        \caption{Dynamic Call Graph vs Enhanced Calling Context Tree }
+        \label{fig:ecct_dt}
+    \end{figure}
+    The metrics recorded inside the tree are described in the subsection Performance Metrics.
+    
+\textit{Performance Metrics}\\
+    In virtue of generating a tree through a tracing approach, it is possible to record runtime information of the system \cite{francis1}.
+    They are recorded using the lttng feature add-context, and this gives the possibility to add performance counters in the tracing session.\\
+    Example: perf:cache-misses, perf:major-faults, perf:branch-load-misses\\
+    This technique was explored in the work of \cite{doray_thesis} and \cite{olsa}.
+    Although we took several metrics in consideration, we summarizes three metrics before introduce the clustering mechanism.\\
+    
+%\textbf{cache-misses}\\ 
+%       When a program accesses a memory location that is not in the cache, it is called a cache miss. Since the processor has to wait for the data to be fetched from the next cache level or from main memory before it can continue to execute, cache misses directly influence the performance of the application \cite{washington}.
+%       The concept of cache miss ratio, is the ratio of memory accesses that cause a cache miss. From the miss ratio you can usually tell whether cache misses may be a performance problem in an application.
+      
+%\textbf{page-faults}\\
+%       A page fault is the sequence of events occurring when a program attempts to access data (or code) that is in its address space, but is not currently located in the system's RAM. The operating system must handle page faults by somehow making the accessed data memory resident, allowing the program to continue operation as if the page fault had never occurred\cite{redhat}.
+      
+%\textbf{cpu instructions}\\ 
+%       This metric is the measurement of the instructions related to arithmetic, logical and shift operations on values in registers. 
+    
+    
+\subsection{Data Structure Construction}
+    The construction of the ECCT involves the reading of the tracing in order and simultaneously building the nodes as soon as the data is coming. It is necessary to delimit the boundaries of the nodes in the tree. Therefore, to set events as starting and end points of the nodes. Depending on the case, the construction of the tree depending on the case might be easy to be done using a ECT, instead of ECCT.\\
+    Consequently, it is necessary to demultiplex the events on the trace. To do so, the trace must provide a way to identify the start and end points of each execution. 
+    For this process there are two approaches:\\
+    First, use existing events of the Linux kernel. As an example, the syscall\_exit\_accept event (generated when a connection is accepted on a socket) and the syscall\_entry\_shutdown event (generated when a connection is closed) correctly delimit requests received by an Apache server. \\
+    Second, is to use LTTng-UST probes, statically inserted in the source code. Different probe types can be used to delimit different execution types. In that way, the delimitation of the nodes can be done.
+    An advantage the first approach is to use existing events and thus, no access to the source code is required. The advantages of the second is that no kernel knowledge is required to use this process.
+    
+    The Figure \ref{fig:ecct_build}, demonstrates the mechanism used to create the ECCT from the tracing file.
+    
+\begin{figure}[h]
+      \centering
+        \includegraphics[width=0.50\textwidth]{figures/ecct.png}
+        \caption{Enhanced Calling Context}
+        \label{fig:ecct_build}
+    \end{figure}
+    
+    After the construction of the tree the clustering mechanisms, described below, can be applied.\\
+  
+\subsection{Clustering}
+\label{sec:clustering}
+\input{article1/model.tex}    
+    
+\section{Solution Implementation}
+\label{sec:implementaion}
+\input{article1/implementation.tex}    
+    

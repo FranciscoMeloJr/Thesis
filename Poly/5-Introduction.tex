@@ -1,0 +1,310 @@
+%   Dans l'introduction, on présente le problème étudié et les buts
+% poursuivis. L'introduction permet de faire connaître le cadre de la
+% recherche et d'en préciser le domaine d'application. Elle fournit
+% les précisions nécessaires en ce qui concerne le contexte de
+% réalisation de la recherche, l'approche envisagée, l'évolution de
+% la réalisation. En fait, l'introduction présente au lecteur ce
+% qu'il doit savoir pour comprendre la recherche et en connaître la
+% portée.
+\Chapter{INTRODUCTION}\label{sec:Introduction}  % 10-12 lignes pour introduire le sujet.
+% Texte en \emph{italique}, \textsc{petites majuscules}, mot \mbox{insécable}.\\
+% Texte \ul{souligné}, \hl{surligné}, \textbf{gras}.\\
+% Texte entre ``guillemets''.\\
+% Police \texttt{monospace}.\\
+% Un mot courant en réseautique mobile: n\oe{}ud\footnote{Note de bas de page.}.\\
+% L'objet RSVP \texttt{SENDER\_TEMPLATE}.\\
+% Nom d'un auteur: \citeauthor{RFC_IPv4}.\\
+% Une architecture 32~bits.\\
+% %%
+% %%  CONCEPTS DE BASE
+% %%
+Tracing, profiling and debugging are essential tools for software development and performance evaluation. Those tools currently facing challenges related to many-core and cloud based systems, as well as, an enormous amount of data to be analyzed. According to some discussions on the distributed system community,  it is expected that with the rapidly increasing scale and complexity of these systems will soon exceed the limits of human capability in terms of quantity of data or time to evaluate it.\\
+In this context there is an increasing demand for automation and reduction of time analysis for market competition reasons. This tendency creates an interesting opportunity for development of automated analysis and methods. Accordingly, this graduate research explores several automated mechanisms for performance analysis through tracing and profiling techniques. \\
+This document presents the state of the art in terms of analysis tools related to tracing and profiling by improving current tools and mechanisms. It proposes data mining techniques to explore and solve problems without the requirement of very specific knowledge of underlying processes of the system thus, reducing the analysis time of the data.
+
+\section{Challenges in tracing analysis}  % environ 2-3 pages
+The first challenge on tracing analysis is to mine meaningful data from the tracing data. A possible way to solve this issue is to group or cluster the tracing data or adding a level of abstraction, to explore and measure it behaviour. Using clustering, the challenge turns to a classification of the data without supervision and how to efficiently apply this technique to measure the causes of the performance issues.\\
+The second main challenge of identifying with certainty a root cause of a specific performance issue. This problem is related to the fact that, considering clusters that delimits different executions, even with a clear properties differentiate them, not necessary this properties is cause of the difference. This challenge can be summarized as association does not mean causation and even if a metric is capable of explaining all the differences on the groups, it is not necessarily is the cause of this difference.\\
+Summarized, these challenges may constitute a real barrier for performance evaluation and diagnosis. They have been partially solved with the current solutions, and despite the success of tracing techniques, there are still opportunities for further enhancements in terms of data analysis.
+
+\section{Elements that impact performance}  % environ 2-3 pages
+Several element compose the performance of an application, especially in the current programming languages like C and C++. The use of prefetching mechanisms and compiler optimizations might impact considerably in the software performance. Out-of-other executions can impact the performance as well.\\
+The use of parallelism architectures that significantly improve the overall performance of a software. Architectures such as the Skylake and Kaby Lake, bringing hyper-threading, L3 of 8MB, and four physical cores. However, this impact will not be linear since it will follow the Amdahl's law of parallelism.
+The limitation in the number of cores and their communication procedures, as well as other hardware limitations inexorably is tending the improvement in software terms. Better algorithms and data structures will be required even more in companies. Tools as profilers and debuggers can be used to improve small parts of a software application or find bugs, respectively.\\
+At the same time, an application is not executed isolated in the system. The operating system has a strong impact in the execution and can not be neglected. Consequently, performance tools such as profilers have a limited analysis in the overall context of an application, so the use of tracing is required.
+Therefore, as consequence of the software requirements, the context of utilization of an application and the amount of resources (and features) that might impact a software performance, deep and efficient analysis methods will be required. \\
+In summary, this work combines the current tools of profiling and tracing to target this specific elements of performance evaluation.
+
+\section{Objectives of the research}  % environ 2-3 pages
+The main objective of this work is to reduce the need for human intervention in the analysis of the system performance. The methodology to fulfill this objective is a comparative methodology is to segregate the data in cluster and later to compare the fast and the slow executions.\\
+The collection of the data is done using tracing and profiling techniques combined with data mining, heuristics and statistics tools. The developed methods were able to find real associations in data with metrics and consequently indicate root causes of performance issues.\\
+This work focus on Linux operating systems and its tools, such as LTTng and Perf counters. Nonetheless, the heuristic approach could be applied to any system that has is able to describe the behaviour of a system using metrics.\\
+In a specific and summarized way, objectives can be summarized as follows:\\
+\begin{enumerate}
+\item Reducing or avoiding the requirement of human intervention in tracing data analysis
+\item Improving the current methods to find root causes using metrics
+\item Developing an optimized solution for the proposed approach
+\end{enumerate}
+\section{Proposed solution}  % environ 2-3 pages
+Aiming the objectives stated above, this research explored several data mining and statistical methods to mine information collected with profiling approaches. Focusing the low-overhead, we used a tracing approach for the user-space applications. Later the data is abstracted in a data structure, ECCT or EDT, which combines profiling data with performance metrics in its nodes, using a sampling technique.\\
+The next step is to apply the data mining approaches to mine data, basically to segregate the similar nodes of the tree and compare them. A comparative approach of the groups can be compare them using statistical means or the Apriori approach.\\
+The comparison of the groups will give the better and worst groups and the indication of the cause of the difference of the groups, this indication (i.e. the claim) can be used to improve the inner algorithm of the application of change a system parameter, in case of a scheduler switch interference.\\
+The solutions can be extended to consider trace correlation and other trace abstractions. Also the use of other data mining techniques can reduce the amount of time requested for the analysis, although the assumptions will continue to be the same.
+
+\section{Solution result}  % environ 2-3 pages
+This research, i.e. the root analysis investigation, aims to find metrics, such as instruction, page-faults, cache misses, that indicate the possible cause of a performance issue. The analysis tool will not indicate an hypothesis, in fact, it will produce an evaluation that the metric is the cause of the performance difference. The next step is done by the user, which can make a claim stating that the metric is or is not partially responsible for the performance issue. 
+The result of the proposed solution will not be an hypothesis as defined by \cite{Blackburn2016TWT29822142983574}. Rather, it will be an evaluation, which considered only the metrics already there. Those metrics come from a tracing and profiling technique and rely on those tools to be real data from the application. The clustering or grouping process does not produce more information that what is available.\\
+In summary the solution produces a sound or not evaluation, which can be truth or not depending on two main statements:\\
+(i) The profiling/tracing are able to measure the system with precision (e.g. minimal overhead)\\
+(ii) The system behavior can be represented with the selected metrics (e.g. a task might not use resources that can not be measured with the metrics)
+
+\section{Use of the solution}  % environ 2-3 pages
+The dissertation brings a compilation of the research focusing in several aspects of mining data considering many tools such as machine learning and statistical evaluation. The application of the methods requires static or dynamic instrumentation, as well as performance data.\\
+The proposed solution as grouping mechanism to track root cause analysis can be used in any cause that the runs can be separated in executions and that the performance counters. Scenarios like this can be found in C/C++ userspace applications, but also in web application where the server can be instrumented to record requests and their performance counters.\\
+The mining algorithms can then be applied to cluster the anomalies, or slow execution groups, and compare them, using profiling techniques. The result of this classification can be used in fuzzy groups, i.e. not just two totally fast and totally slow performance groups and this can bring more information for the analysis in general.\\
+The proposed RGG Differential Flame Graph can reduce the ambiguity for equal performance functions and it is suitable for fast and slow comparison. 
+Finally, the heuristic evaluation can be used combined with other clustering or grouping tools, such as k-means. The use of this heuristic gives the optimal number of k for the clustering algorithm to work. \\
+The solution can be applied directly in real application use for this tool is in regressions tests, where unit tests, profiling tools and debuggers can not reveal the causes for performance deviations. Further details will be provided in the the article.
+To help in the understanding of the solution, we will present some definitions intrinsically related to in the following section.
+
+\section{Basic Definitions}  % environ 2-3 pages
+
+\subsection{Anomaly}
+Anomalies can be simplified as discrepancies in the expected distribution or on a graph, or as a point or group of data points lying outside an expected normal region as defined in \cite{das_detection}. \\
+However, this research focus in a specific kind of anomalies, collective anomalies and may consider point anomalies also. According to the definition the definition of anomaly of \cite{Chandola2009ADS15418801541882} and is related to a group of discrepancies in terms of standard behaviour. The collective discrepancies may indicate a series of conditions related to the observed software.\\
+\subsection{Execution}
+        
+Execution is any run of a program that can be traced and the performance data can be used to measure its behaviour. Executions can be grouped so they can be compared systematically using several techniques. Inside an execution several performance parameters can be present. On this research we focus on comparison methods of groups of executions, which can be compared using several statistical techniques. 
+
+\subsection{Profile}
+Profiling is the a dynamic analysis of a program. Broadly there are two main types of profilers: the ones that count the number of invocations and the ones that display the a time measurement about the statements and routines. An example of profiler is gprof, which counts the running time of routines \cite{Graham82gprofa}.\\
+The profiling mechanisms can be used to analyze with deep the core an application or the system, specifically the stack frames of the application.
+
+\subsection{Debug}
+Software debugging is the general process of finding and resolving software issues. There are several strategies for debugging such as isolating the problem and ensuring the assumptions. Many tools can be used to debug, debuggers, a very known debugger is the GDB software, Gnu Debugger, can debug several languages for example Ada, C, C++, Objective-C, Pascal.\\
+
+\subsection{Instrumentation}
+Instrumentation can be defined as the technique of write trace statements at some locations of the code. 
+Instrumentation can be done dynamically and statically. The first, dynamic instrumentation, is the possibility of changing the code instrumentation during execution time. In LTTng, probes are inserted in the kernel code then the kernel is compiled and the system is rebooted with an instrumented version \cite{Weber2012TFC23574872357581}.
+Whereas, static instrumentation is the process of inserting instrumentation directly in the source code \cite{Graham82gprofa}. \\
+Instrumentation can be simplified as the process of inserting extra code in the application to measure its behaviour. Instrumentation can be performed at various stages: in the source code, at compile time, post link time, or at run time. \\
+There are two possibilities of dynamic instrumentation of code: probe-based and jit-based.  This first one, probe-based, is used by  Dyninst in \cite{dyninst}, Vulcan from \cite{Vulcan}, and \cite{dtrace}.  The second instrumentation approach is jit-based Valgrind \cite{Valgrind}, Strata in \cite{Strata}, DynamoRIO \cite{DynamoRIO}, Diota \cite{Diota}, and Pin in \cite{Pin}.
+
+\subsection{Tracing}
+The concept of tracing can be defined as a very fast mechanism system-wide fined grained logging. With Different than logging, which deals with high level record of the system, tracing records the low events of the system. This record can then be used for another analysis mechanism, such as sequence matching, trace abstraction and visualization tools.\\
+The understanding of the system it not trivial, by browsing a list of events for example, the trace files are analyzed using a program that processes the traces. Those tools will generate graphical or textual reports including several resources of the system, including: process status, amount of data read or written, latencies and Interruptions.
+
+\subsection{Events}
+Events here are defined as a record containing: timestamp, a type and some arbitrary payload. They can also be used highlight the entries and exits of functions in a software application and combined with performance metrics, can be used to measure the current state of an application \cite{giraldeau-ols2011}.
+
+\subsection{Metrics}
+The concept of metric here is the hardware or software performance runtime information and can to gather several aspects of the behavior of the system \cite{giraldeau-ols2011}. The term metric used in this work is related to hardware and software metrics, mostly collected using Perf. \\
+The information given is the current metric of the system and using sampling technique can be recorded in the nodes of a data structure, i.e. in the nodes of the ECCT or EDT.
+\section{Outline of the research}
+In the chapter 2 it will be presented the Literature Review, which presents the main aspects of this research. Detection and diagnose tools are presented, with details. Moreover, methods of data mining with a compilation of the pros and cons of them and where were them used before.\\
+The next chapter, Methodology, which is the chapter 3, presents details in terms of hypothesis, assumptions and details in the methods applied. \\
+Later, Chapter 4 presents the Article <<Performance Analysis Using Automatic Grouping>>. This article presents an automated solution, which includes data collection using tracing mechanisms and data mining methods to analyze them to compare groups of executions. The approach is used in real software applications of C/C++. The article was submitted to ().\\
+Chapter 5 is the General Discussion and Complementary Results, that will discuss details of the results and methods, a comparative approach is described.
+Finally, Chapter 5 is the Conclusion, which includes a summary of the work, suggestions about the method and its specificities. It also includes the limitations and the future work.
+
+% \begin{flushleft}
+% 1\iere{} utilisation d'un acronyme: \ac{IETF}.\\
+% 2\ieme{} utilisation d'un acronyme: \ac{IETF}.\\
+% Acronyme au long: \acl{IETF}.\\
+% \end{flushleft}
+
+% \subsection{Une sous-section}
+% Un URL: \href{http://www.polymtl.ca}{École Polytechnique de Montréal}.
+
+% \subsubsection{Une sous-sous-section}
+% Les besoins des flots de données peuvent être catégorisés selon
+% quatre paramètres importants \citep\cite{voir}\cite{sect.\,5.4}{Tanenbaum} ou:
+% \begin{itemize}
+% \item la fiabilité (acheminement des données avec succès)~;
+% \item le délai de \mbox{bout-en-bout} de la source vers la destination~;
+% \item la variation du délai de \mbox{bout-en-bout} (\emph{jitter})~;
+% \item la bande passante requise (le débit des informations).
+% \end{itemize}
+
+% \paragraph{Le niveau paragraphe} est plus bas encore dans la hiérarchie\ldots
+% Une citation entre parenthèses \citep\cite{voir}\cite{}{ART_ARTP}.
+% ou des citations entre parenthèses \citep\cite{}\cite{}{nichols2010,PHD_HPMRSVP,ART_HMRSVP}.
+
+% \clearpage
+
+% %%
+% %% ELEMENTS DE LA PROBLEMATIQUE
+% %%
+% \section{Éléments de la problématique}  % environ 3 pages
+% La description de \mbox{l'en-tête} commun de RSVP est détaillée ci-dessous:\\
+% \begin{tabular}{p{1in}p{4.5in}}
+% &\\ % Ligne vide
+% \texttt{Ver}: & \texttt{4 bits}\\
+%           & Version du protocole. La version actuelle est~1.\\\cite{5pt}
+% \texttt{Flags}: & \texttt{4 bits}\\
+%           & Aucun Flag n'est défini. L'émetteur doit (\textbf{MUST})
+%           mettre le champ à zéro et le récepteur doit (\textbf{MUST})
+%           ignorer ce champ.\\\cite{5pt}
+% \texttt{Msg Type}: & \texttt{8 bits}\\
+%           & Type de message\\\cite{5pt}
+% \texttt{Checksum}: & \texttt{16 bits}\\
+%           & Complément à un du complément à un de la somme des champs
+%           de \mbox{l'en-tête}, avec le champ Checksum à~0 pour des
+%           fins de calcul. La valeur~0 signifie qu'aucun Checksum n'a
+%           été transmis. Si le résultat du calcul du Checksum donne~0,
+%           la valeur 0xFFFF doit être stockée dans ce champ.\\\cite{5pt}
+% \texttt{TTL}: & \texttt{8 bits}\\
+%           & Valeur originelle du champ \texttt{TTL} utilisée pour
+%           transmettre ce message.\\\cite{5pt}
+% \texttt{Reserved}: & \texttt{8 bits}\\
+%           & Réservé pour usage futur. L'émetteur doit (\textbf{MUST})
+%           mettre le champ à zéro et le récepteur doit (\textbf{MUST})
+%           ignorer ce champ.\\\cite{5pt}
+% \texttt{Length}: & \texttt{16 bits}\\
+%           & Longueur totale du message en octets, incluant
+%           \mbox{l'en-tête} commun et tous les objets de longueur
+%           variable.
+% \end{tabular}
+
+% \subsection{Autres types de structures de données}
+% L'énumération:
+% \begin{enumerate}
+% \item Un item~;
+% \item Un autre item.
+% \end{enumerate}
+
+
+% \subsection{Le protocole IPv6}
+% Voir la Figure~\ref{fig:IPv6} pour plus de détails. Le champs DSCP est
+% décrit dans le Tableau~\ref{tab:RangesDSCP}.
+
+% \begin{figure}\cite{htb}
+% \centering
+% \includegraphics\cite{width=4in}{IPv6_header}
+% \caption{L'en-tête IPv6}
+% \label{fig:IPv6}
+% \end{figure}
+
+% \begin{table}\cite{ht}
+% \caption{Plages de valeurs pour le champ \texttt{DSCP}}
+% \centering
+% \begin{tabular}{|c|c|l|}
+% \hline\rowcolor\cite{gray}{0.8}\color{black}
+% Plage & Valeurs & Règle d'assignation\\\hline
+% 1 & xxxxx0 & Assignation par une norme de l'IANA\\\hline
+% 2 & xxxx11 & Expérimentation/Usage local\\\hline
+% 3 & xxxx01 & Expérimentation/Usage local (pourrait être jointe à la plage 1)\\\hline
+% \end{tabular}
+% \label{tab:RangesDSCP}
+% \end{table}
+
+% % On veut éviter que la figure et le tableau soient placés au-delà de la section courante.
+% \FloatBarrier
+
+
+% %%
+% %% OBJECTIFS DE RECHERCHE
+% %%
+% \section{Objectifs de recherche}  % 0.5 page
+% Les objectifs de la recherche sont de concevoir un algorithme $O(n)$.
+
+
+% %%
+% %% PLAN DU MEMOIRE
+% %%
+% \section{Plan du mémoire}  % 0.5 page
+% Un tableau:
+% \begin{table}\cite{htbp}
+%   \centering
+%   \caption{Constantes et variables du modèle analytique}
+%   \begin{tabular}{|c|l|}
+%     \hline\rowcolor\cite{gray}{0.8}\color{black}
+%     Symbole         & Description\\\hline
+%     $\lambda$       & Taux d'arrivée moyen des requêtes de réservation de ressources\\\hline
+%     $\frac{1}{\mu}$ & Durée moyenne d'une session\\\hline
+%     $C$             & Capacité d'une cellule (nombre de sessions supportées)\\\hline
+%     $v_{moy}$       & Vitesse moyenne des MN dans le réseau d'accès\\\hline
+%     $L$             & Longueur d'un côté d'une cellule carrée\\\hline
+%     $n$             & Nombre moyen de MN dans une cellule\\\hline
+%     $\rho$          & Charge d'une cellule\\\hline
+%     $P_b$           & Probabilité de blocage d'une requête de réservation\\\hline
+%     $P_f$           & Probabilité d'interruption forcée d'une session\\\hline
+%     $P_c$           & Probabilité de compléter une session avec succès\\\hline
+%     $\Delta{}T$     & Délai de transmission\\\hline
+%   \end{tabular}
+%   \label{tab:Definitions}
+% \end{table}
+
+% La formule d'\mbox{Erlang-B}:
+% \begin{equation}
+%   P_b = \frac{\frac{\rho^C}{C!}}{\sum\limits_{x=0}^{C}\frac{\rho^x}{x!}}
+%   \label{eq:Pblock}
+% \end{equation}
+
+% Une autre équation:
+% \begin{equation}
+%   \begin{split}
+%     P_c &= (1 - P_b) \times (1 -  P_f)^N\\
+%         &= (1 - P_b)^{N+1}
+%   \end{split}
+%   \label{eq:ProbComplete}
+% \end{equation}
+
+% Enfin, l'expression suivante indique le moment à partir duquel les
+% réservations de ressources sont en place:
+% \begin{equation}
+%   \Delta{}T_{init} =
+%   \begin{cases}
+%     2\Delta{}T_{E2E} & \Delta{}T_{wan} > (\Delta{}T_{rad} + \Delta{}T_{net})\\
+%     \Delta{}T_{E2E} + 3(\Delta{}T_{rad} + \Delta{}T_{net}) & \text{sinon}
+%   \end{cases}
+%   \label{eq:InitCost}
+% \end{equation}
+
+% \paragraph{Le taux de paquets perdus} correspond au nombre de paquets
+% éliminés à cause d'une erreur de \emph{checksum} à un n\oe{}ud
+% quelconque ou d'une situation de congestion. Le taux de paquets perdus
+% pour un chemin est déterminé de la façon suivante:
+% \begin{equation}
+%   \label{eq:genPLR}
+%   PLR_P = 1 - \prod_{i=1}^N(1 - PLR_i)
+% \end{equation}
+
+% Toutefois, si les taux d'erreurs sont très faibles, comme c'est
+% généralement le cas pour des liens optiques, on peut approximer
+% $PLR_P$ de façon à le transformer en un paramètre additif:
+% \begin{equation}
+%   \label{eq:approxPLR}
+%   \begin{split}
+%     PLR_{L_1 \oplus L_2} &= 1 - (1 - PLR_1)(1 - PLR_2)\\
+%     &= 1 - (1 - PLR_2 - PLR_1 + \underbrace{PLR_1
+%       \times PLR_2}_\text{négligeable})\qquad PLR_1 \ll 1,
+%     PLR_2 \ll 1\\
+%     &\approx PLR_1 + PLR_2
+%   \end{split}
+% \end{equation}
+
+% \clearpage
+
+% Une courbe:
+% \begin{figure}\cite{htb}
+% \centering
+% \includegraphics\cite{width=5in}{LinkUsage}
+% \caption{Délai moyen en fonction du taux d'utilisation d'un lien}
+% \label{fig:LinkUse}
+% \end{figure}
+
+% \selectlanguage{english}
+% This paragraph is formatted by \LaTeX{} according to the standard rules of the
+% English language (\mbox{e.g.} hyphenation).
+% \selectlanguage{french}
+
+% L'arithmétique en virgule flottante peut entraîner des erreurs
+% d'approximation et il est important d'en être conscient
+% \citep\cite{voir}\cite{}{Goldberg1991}.
+
+% De même, les calculs effectués sur une carte graphique (GPU) peuvent
+% introduire des erreurs d'approximation \citep{Benz2012, DSilva2012,
+%   Dabrowski2011, DeDinechin2011, DeFigueiredo2004, Filliatre2007,
+%   Fousse2007, Goubault2001, Goubault2008, Harder, Higham2002, Tanenbaum,
+%   Whitehead2011, mpmath, nichols2010, nvidia2012, Benz2012, Bao2013}.

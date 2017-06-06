@@ -1,0 +1,11 @@
+The main motivation for this research was the current limitations of the current tools to track problems on executions that does not appear often, for example one execution long run among a thousand that work perfectly. 
+This difficult relies mainly on the amount of data that is needed to be generated and analyzed comparatively. 
+
+From the point of view of the grouping techniques, the current more reliable technique still require some human analysis of the data, which would consume time and undermine an automated technique. This is the reason for the development of the auto grouping technique, which combines an heuristic evaluation.
+
+
+The implementation also developed the RGG differential flamegraph to compare groups of executions. This implementation uses a three colors: red, green and gray. This was necessary to avoid the ambiguity that the original work developed by Brendan Gregg gave, where the green color could mean faster execution or equal execution, in a comparative way.
+
+This methodology developed can be applied in other scenarios and it is independent from the implementation. Besides it is also independent from the grouping algorithm, since it is an heuristic and not an algorithm. Combined with the Apriori algorithm, the grouping technique can provide strong insights on complex cases.
+
+Finally the motivation to implement the solution in TraceCompass is because of its reliability as trace framework. TraceCompass is currently supported by Ericsson Inc. and Dorsal lab at Polytechnique Montreal, and has several features, which combined, form a complete analysis framework for different kinds of traces.

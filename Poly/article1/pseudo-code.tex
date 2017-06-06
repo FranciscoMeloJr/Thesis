@@ -1,0 +1,41 @@
+% \begin{lstlisting}
+% #include <stdio.h>
+% #define N 10
+% /* Block
+%  * comment */
+
+% int function1()
+% {
+%     int i;
+%     int i, j;
+%     int[128][128];
+% }
+% \end{lstlisting}
+
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+\begin{lstlisting}
+
+    //Considering 128 words/page\\
+    
+    int i, j;\\
+    int[128][128]; \\
+    // original version\\
+    for(i = 0; i < 128; i++)\\
+        for(j = 0; j < 128; j++)\\
+            data[i][j] = 0;\\
+    // new version\\
+    for(j = 0; j < 128; j++)\\
+        for(i = 0; i < 128; i++)\\
+            data[i][j] = 0;\\
+
+\end{lstlisting}
+% \label{pseudo:page-faults}
+% 
+% \caption{Case  study   Regression  Comparison   II  -  codechanges}
+ 

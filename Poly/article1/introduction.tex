@@ -1,0 +1,29 @@
+Software performance is a major concern for software development. Various studies highlight the use of tools as debugging and tracing to help on performance problems, which can be used to improve performance or detect performance issues.
+% The problem
+One example of performance issue is the comparison of similar executions of the same program in the same configuration setting. An example was found in \cite{doray_article}, after executing several times the same query operation on MongoDB, a free open-source database framework, its performance decreases abruptly a further investigation lead to the root cause of this performance issue.
+
+% The solutions
+For this kind of performance problem, which is related with the execution inside a real system, the current solutions are to debug or to trace it. The first one, debugging, is the location of code and wrong executions directly on the source by execution the code in a locked environment using breakpoints. However, some debugging tools require the reproduction of the exactly issue to trigger the same code mechanism and its necessary to retard the execution of the program while doing this process.
+
+On the other hand, a trace is an execution log of a software that consists essentially of an ordered list of events. An event is generated when a certain path of the code is executed, commonly denominated tracepoint, where each event consists of a timestamp, a type and some arbitrary payload \cite{francis1}. tracepoints can be embedded on the code in two ways: statically or dynamically inserted. The later, dynamic tracing, gives the possibility to add tracepoints without modifying the source code and the sooner requires the modification of the source code. Besides, tracing can be performed at the kernel and user-space level \cite{francis1}.\\
+
+Unlike debugging, it is possible to trace a program without interrupt it, yet, there is an overhead caused by its usage. A good tracer needs to minimize the disturbance of the running program to be a useful tool for analysis. LTTng\cite{desnoyers}, developed by Mathieu Desnoyers, has this minimal level of impact on the system and consequently allows to trace the user-space and the kernel space with minimal interference. LTTng, allows the analysis of task interactions with each other and with the operating system. Locating and analyzing performance problems is not a trivial activity because of their large size, since more events generate more information to be gathered and analyzed. 
+
+After collecting the data on the tracer, it is necessary to analyze the software behaviour through some mechanism, for instance the call graph \cite{call_graph}. A call graph is a representation of the stack frames of the software and can be built using different techniques. This analysis requires expert knowledge and deep analysis of the system since this process was not automated yet.
+
+Through tracing mechanisms is possible to build a dynamic model of the software or, in other words, a calling tree of it. Moreover, tracing allows the possibility to add performance measurements to this structure, as shown in \cite{doray_article}.
+
+In summary, from the enhanced data structure described above and considering the lack of an automate solution to solve problems as the stated above, it is possible to build a solution that records several software properties at run time. Moreover, using some specific grouping mechanisms it is possible to find root causes of several performance issues using this comparative approach.\\
+
+This paper introduces an automated solution for clustering metrics using the call context tree to find performance related issues. We implemented it on TraceCompass with visualization mechanisms to facilitate the analysis of different aspects of the Calling Context Tree. Then we applied this technique on four different use cases to analyze the performance problem of them. Finally, we discuss the drawbacks of this technique and the possible solutions to overcome them aiming to apply this analysis on real software.
+
+The research aims to investigate the following research questions;
+
+\begin{itemize}
+\item RQ 1: How can we build an efficient and flexible model for performance comparison?
+\item RQ 2: How to automate the performance analysis on several runs using performance counters?
+% \item RQ 3: The root cause found using the approach is accurate?
+\item RQ 3: How accurate was the obtained results ?
+\end{itemize}
+
+\textbf{This paper is organized as follows} The related work is presented in section \ref{sec:related-work}, then the solution is presented in \ref{sec:solution} with the clustering technique. In section \ref{sec:methodology}, we present the methodology used followed by the micro-benchmarks and an illustrative example of the analysis. The use case section \ref{sec:usecases}, the discussion of the results \ref{sec:results} and a section with some limitations \ref{sec:validity}. Finally the conclusion \ref{sec:conclusion},

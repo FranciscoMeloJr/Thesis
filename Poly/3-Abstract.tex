@@ -1,0 +1,20 @@
+% Abstract
+%
+%   Résumé de la recherche écrit en anglais sans être
+% une traduction mot à mot du résumé écrit en français.
+
+\chapter*{ABSTRACT}\thispagestyle{headings}
+\addcontentsline{toc}{compteur}{ABSTRACT}
+%
+\begin{otherlanguage}{english}
+
+Performance has become a crucial matter on software development, testing and maintenance. To address this concern, developers and testers use several tools to improve the performance or track performance related bugs. \\
+The use of comparative methodologies such as Flame Graphs provides a formal way to verify causes of regressions and performance issues. The comparison tool provides information for analysis that can be used to improve them by a deep profiling mechanism, usually comparing a normal with an abnormal profiling data.
+On the other hand, Tracing mechanism is a trend mechanism targeting to record events in the system and reduce the overhead of its utilization. The record of this information can be used to supply developers with data for performance analysis. However, the amount of data provided and the requirement knowledge to understand may present a challenge for the current analysis methods and tools.\\
+Combining both methodologies, a comparative mechanism of profiling and a low overhead trace system can enable evaluate causes of issues also meeting stringent performance requirements at the same time. The next step is to use this data to develop methods to root cause analysis and bottleneck identification.
+The objective of this research project is to automate the process of trace analysis and automatic identification of differences among a groups of executions. The presented solution highlight differences in the groups presenting a possible cause of this difference, the user can then benefit from this claim to improve the executions. \\
+We present a series of automated techniques that can be used to find the root causes of performance variations and that requiring small or non human interference. The main approach is capable to indicate the performance cause using a comparative grouping methodology on the executions and was applied on real use cases. The proposed solution was implemented on an analysis framework to help developers on similar problems together with a differential flame graph tool. 
+To our knowledge, this is the first attempt to correlate automatic grouping mechanisms with root cause analysis using tracing data. In this project, most of the data used for evaluations and experiments were done in Linux Operating System and were conducted using the Linux Trace Toolkit Next Generation (LTTng) which is a very flexible tool with low overhead.
+
+
+\end{otherlanguage}
