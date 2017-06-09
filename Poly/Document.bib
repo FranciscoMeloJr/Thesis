@@ -179,6 +179,14 @@
   author =	 {Nicholas J. Higham},
 }
 
+@phdthesis{francis_phd,
+  author =	 "Francis Giraldeau",
+  title =	 "{ANALYSE DE PERFORMANCE DE SYSTÈMES DISTRIBUÉS ET HÉTÉROGÈNES À L’AIDE DE TRAÇAGE NOYAU}",
+  school =	 "{École Polytechnique de Montréal}",
+  year =	 2015,
+  month =	 nov
+}
+
 @phdthesis{PHD_HPMRSVP,
   author =	 "C. Abondo",
   title =	 "{Gestion de la Qualité de Service dans les systèmes mobiles de prochaine génération}",
@@ -203,6 +211,36 @@
   isbn =	 "0-13-066102-3."
 }
 
+@misc{gaussian,
+    author    = "Rob Tibshirani and Trevor Hastie",
+    title     = " Virtual machines CPU monitoring with kernel tracing ",
+    howpublished={\url{http://statweb.stanford.edu/~tibs/stat315a/LECTURES/em.pdf}},
+	note = "[Online; accessed 05-May-2017]",
+	year = 2008
+}
+@misc{kw,
+    author    = "Isnaldo Francisco De Melo and Abderrahmane Benbachir and Michel Dagenais",
+    title     = "Statistical tool to detect software regressions",
+	note = "[To be published]",
+	year = 2017
+}
+@misc{brendan_ebpf,
+    author    = "Brendan Gregg",
+    title     = "eBPF: One Small Step",
+    howpublished={\url{http://www.brendangregg.com/blog/2015-05-15/ebpf-one-small-step.html}},
+	note = "[Online; accessed 05-May-2017]",
+	year = 2015
+}
+
+@misc{limitations,
+    author    = "Herb Sutter",
+    title     = "The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software",
+    howpublished={\url{http://www.gotw.ca/publications/concurrency-ddj.htm}},
+	note = "[Online; accessed 05-May-2017]",
+	year = 2005
+}
+
+
 @MISC{Whitehead2011,
   author =	 {Nathan Whitehead and Alex Fit-Florea},
   title =	 {Precision \& Performance: Floating Point and {IEEE} 754 Compliance for {NVIDIA} {GPUs}},
@@ -210,6 +248,7 @@
   abstract =	 {A number of issues related to floating point accuracy and compliance are a frequent source of confusion on both CPUs and GPUs. The purpose of this white paper is to discuss the most common issues related to NVIDIA GPUs and to supplement the documentation in the CUDA C Programming Guide.},
   url =		 {https://developer.nvidia.com/sites/default/files/akamai/cuda/files/NVIDIA-CUDA-Floating-Point.pdf}
 }
+
 
 @manual{mpmath,
   key =		 {mpmath},
@@ -294,28 +333,39 @@ Design and Implementation",
     author    = "Mohamad Gebai and Michel R Dagenais",
     title     = " Virtual machines CPU monitoring with kernel tracing ",
     howpublished={\url{http://shervinemami.info/timingTests.html}},
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
+
+@misc{sybase,
+    author    = "Sybase",
+    title     = " End to End Tracing ",
+    howpublished={\url{http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc01217.0224/doc/html/nkr1338287526815.html}},
+    year = 2013,
+	note = "[Online; accessed 05-May-2017]"
+}
+
+
 
 @misc{trace_diff,
     author    = "Ubuntu Manpage",
     title     = "TraceDiff",
     howpublished={\url{http://manpages.ubuntu.com/manpages/precise/man1/tracediff.1.html}},
     year = 2017,
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
 
 @misc{WPA,
     author    = "Microsoft",
     title     = "Windows Performance Analyzer",
     howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
 
-@misc{timeTests,
+ @misc{timeTests,
     author    = "Shervin Emami",
     title     = "Time Tests",
     howpublished={\url{http://shervinemami.info/timingTests.html}},
+    year = 2012,
 	note = "[Online; accessed 05-January-2017]"
 }
 @inproceedings{StackMine,
@@ -332,21 +382,21 @@ Design and Implementation",
     howpublished={\url{http://msdn.microsoft.com/en-us/library/
 windows/desktop/aa363668(v=vs.85).aspx.}},
     year = 2017,
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
 @misc{brendan_differential,
     author    = "Brendan Gregg",
     title     = "Differential Flame Graph",
     howpublished={\url{http://www.brendangregg.com/blog/2014-11-09/differential-flame-graphs.html}},
     year = 2014,
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
 
 @misc{WPA,
     author    = "Microsoft",
     title     = "Windows Performance Analyzer",
     howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
 
 
@@ -463,8 +513,8 @@ windows/desktop/aa363668(v=vs.85).aspx.}},
   author =        "Abderrahmane Benbachir and Isnaldo Francisco De Melo jr and Bram Adams and Michel Dagenais",
   title =       "Automated Performance Deviation Detection AcrossGoogle Chromium Releases",
   booktitle={QRS 2017},
-  month =        "December",
-  year =         "2016",
+  month =        "July",
+  year =         "2017",
 }
 
 @INPROCEEDINGS{pattern_matching_intrusion,
@@ -481,7 +531,7 @@ month={Sept},
 @misc{tracecompare,
   author =       "Francois Doray",
   title =        "Trace Compare",
-  month =        "January",
+  month =        "May",
   year =         "2015",
   url =          "https://github.com/fdoray/tracecompare",
 }
@@ -515,7 +565,7 @@ month={Sept},
 @misc{opencv,
   author =       "itseez",
   title =        "OpenCV",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://opencv.org/about.html",
   howpublished = {\url{http://opencv.org/about.html}},
@@ -557,7 +607,7 @@ month={Dec},
 @misc{ring,
   author =       "Ring Project",
   title =        "Ring",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://www.ring.cx",
 }
@@ -565,7 +615,7 @@ month={Dec},
 @misc{tracecompass,
   author =       "Trace Compass community",
   title =        "Trace Compass",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://tracecompass.org/",
 }
@@ -574,7 +624,7 @@ month={Dec},
 @misc{firefox,
   author =       "Mozilla",
   title =        "Mozilla Support",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "https://support.mozilla.org/en-US/questions/817039?page=2",
 }
@@ -582,7 +632,7 @@ month={Dec},
 @misc{mongodb,
   author =       "MongoDB",
   title =        "Mongo DB",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "https://docs.mongodb.com/manual/",
 }
@@ -590,7 +640,7 @@ month={Dec},
 @misc{mrl,
   author =       "Stats Software",
   title =        "How To Find Relationship Between Variables, Multiple Regression",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://www.statsoft.com/Textbook/Multiple-Regression",
 }
@@ -598,7 +648,7 @@ month={Dec},
 @misc{call_graph,
   author =       "Ryder, B.G.",
   title =        "Constructing the Call Graph of a Program.Software Engineering, IEEE Transactions on, vol. SE-5, no.3pp. 216– 226, May 1979",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1702621",
 }
@@ -642,7 +692,7 @@ month={Dec},
 @misc{precise,
   author =       "William N. Sumner and Yunhui Zheng and Dasarath Weeratunge and Xiangyu Zhang",
   title =        "Precise Calling Context Encoding",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "https://www.cs.purdue.edu/homes/xyzhang/Comp/icse10.pdf",
 }
@@ -650,7 +700,7 @@ month={Dec},
 @misc{apriori,
  author =       "Rakesh Agrawal and Ramakrishnan Srikant",
   title =        "Fast algorithms for mining association rules in large databases. Proceedings of the 20th International Conference on Very Large Data Bases, VLDB, pages 487-499, Santiago, Chile, September 1994.",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://rakesh.agrawal-family.com/papers/vldb94apriori.pdf",
 
@@ -662,12 +712,27 @@ month={Dec},
     publisher={O'Reilly Media},
     year={2016}
 }
+@book{shapiro,
+    author={Andy Field},
+    title={Discovering statistics using SPSS},
+    publisher={SAGE Publications},
+    year={2013}
+}
+%  Field, Andy (2009). Discovering statistics using SPSS (3rd ed.). Los Angeles [i.e. Thousand Oaks, Calif.]: SAGE Publications.
+
+
+ @misc{break,
+    author = " Expert Health Data Programming ",
+    title = "What is Jenks Natural Breaks?",
+    url = "https://www.ehdp.com/vitalnet/breaks-1.htm",
+}
+
 
 @misc{desnoyers,
  author =       "Mathieu Desnoyers and Michel R. Dagenais ",
   title =        "The LTTng tracer: A low impact performance and behavior monitor for GNU/Linux",
-  month =        "January",
-  year =         "2017",
+  month =        "May",
+  year =         "2006",
   url =          "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.116.5569&rep=rep1&type=pdf",
 
 }
@@ -675,10 +740,10 @@ month={Dec},
 @misc{vitillo,
   author =       "Roberto A. Vitillo ",
   title =        "Performance Tools Developments.Future computing in particle physics, 16 June 2011",
-  month =        "January",
-  year =         "2017",  
+  month =        "May",
+  year =         "2011",  
   howpublished = {\url{http://indico.cern.ch/event/141309/contributions/1369454/attachments/126021/178987/RobertoVitillo_FutureTech_EDI.pdf}},
-  note = "[Online; accessed 05-January-2017]"
+  note = "[Online; accessed 05-May-2017]"
 
 }
 
@@ -686,7 +751,7 @@ month={Dec},
  author = {Ezzati-Jivan, Naser and Dagenais, Michel R.},
  title = {A Stateful Approach to Generate Synthetic Events from Kernel Traces},
  journal = {Adv. Soft. Eng.},
- issue_date = {January 2012},
+ issue_date = {May 2012},
  volume = {2012},
  month = jan,
  year = {2012},
@@ -703,10 +768,10 @@ month={Dec},
 @misc{differential_flame,
   author =       "Brendan Gregg",
   title =        "Differential flame graphs",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   howpublished = {\url{http://www.brendangregg.com/blog/2014-11-09/differential-flame-graphs.html}},
-  note = "[Online; accessed 05-January-2017]"
+  note = "[Online; accessed 05-May-2017]"
 
 }
 
@@ -714,7 +779,7 @@ month={Dec},
 @misc{perf,
   author =       "Kernel.org",
   title =        "perf: Linux profiling with performance counters",
-  month =        "January",
+  month =        "May",
   year =         "2014",
   url =          "https://perf.wiki.kernel.org/",
 
@@ -831,7 +896,7 @@ month={Dec},
     title = "Reading and Writing Images",
      howpublished = {\url{http://docs.opencv.org/3.0-beta/modules/imgcodecs/doc/reading_and_writing_images.html}},
      year = 2014,
-     note = "[Online; accessed 05-January-2017]"
+     note = "[Online; accessed 05-May-2017]"
 }
 
 @article{Cohen,
@@ -881,7 +946,7 @@ month={Dec},
     title = "Flame Graphs",
     \howpublished = {\url{http://www.brendangregg.com/flamegraphs.html}},
     year = 2017,
-    note = "[Online; accessed 05-January-2017]"
+    note = "[Online; accessed 05-May-2017]"
 }
 
 @article{SPECTRAPERF,
@@ -910,7 +975,6 @@ month={Dec},
     year = 2012,
     url = "http://code.opencv.org/issues/1423",
     howpublished = {\url{http://code.opencv.org/issues/1423}},
-    year = 2014,
 }
 
 @misc{opencv_source_diff,
@@ -918,7 +982,7 @@ month={Dec},
     title = "Difference",
     url = "https://github.com/opencv/opencv/compare/3.0.0...3.1.0",
     howpublished = {\url{https://github.com/opencv/opencv/compare/3.0.0...3.1.0}},
-    note = "[Online; accessed 05-January-2017]",
+    note = "[Online; accessed 05-May-2017]",
     year = 2012
 }
 
@@ -927,7 +991,7 @@ month={Dec},
     title = "Inline performance",
     year = 2016,
      url = "http://www.tantalon.com/pete/cppopt/final.htm",
-     note = "[Online; accessed 05-January-2017]",
+     note = "[Online; accessed 05-May-2017]",
      year = 2014,
 }
 
@@ -1005,22 +1069,17 @@ month={},}
     author    = "Mohamad Gebai and Michel R Dagenais",
     title     = " Virtual machines CPU monitoring with kernel tracing ",
     howpublished={\url{http://shervinemami.info/timingTests.html}},
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
 
 @misc{WPA,
     author    = "Microsoft",
     title     = "Windows Performance Analyzer",
     howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
-	note = "[Online; accessed 05-January-2017]"
+	note = "[Online; accessed 05-May-2017]"
 }
 
-@misc{timeTests,
-    author    = "Shervin Emami",
-    title     = "Time Tests",
-    howpublished={\url{http://shervinemami.info/timingTests.html}},
-	note = "[Online; accessed 05-January-2017]"
-}
+
 @inproceedings{StackMine,
      AUTHOR = "Shi Han and Yingnong Dang and Song Ge and Dongmei Zhang and Tao Xie",
      TITLE = "Performance Debugging in the Large via Mining Millions of Stack Traces",
@@ -1034,14 +1093,14 @@ month={},}
     author    = "Microsoft",
     title     = "Windows Performance Analyzer",
     howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
-	note = "[Online; accessed 05-January-2016]"
+	note = "[Online; accessed 05-May-2016]"
 }
 
 @misc{gprof,
     author    = "Susan L. Graham and Peter B. Kessler and Marshall K. McKusick",
     title     = "Windows Performance Analyzer",
     howpublished={\url{https://msdn.microsoft.com/en-us/library/windows/hardware/hh448170.aspx}},
-	note = "[Online; accessed 05-January-2016]"
+	note = "[Online; accessed 05-May-2016]"
 }
 
 @inproceedings{ball,
@@ -1099,7 +1158,7 @@ month={},}
 @misc{opencv,
   author =       "itseez",
   title =        "OpenCV",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://opencv.org/about.html",
 }
@@ -1125,7 +1184,7 @@ month={},}
 @misc{ring,
   author =       "Ring Project",
   title =        "Ring",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://www.ring.cx",
 }
@@ -1134,7 +1193,7 @@ month={},}
 @misc{firefox,
   author =       "Mozilla",
   title =        "Mozilla Support",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "https://support.mozilla.org/en-US/questions/817039?page=2",
 }
@@ -1142,7 +1201,7 @@ month={},}
 @misc{mongodb,
   author =       "MongoDB",
   title =        "Mongo DB",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "https://docs.mongodb.com/manual/",
 }
@@ -1150,7 +1209,7 @@ month={},}
 @misc{mrl,
   author =       "Stats Software",
   title =        "How To Find Relationship Between Variables, Multiple Regression",
-  month =        "January",
+  month =        "May",
   year =         "2017",
   url =          "http://www.statsoft.com/Textbook/Multiple-Regression",
 }
@@ -1308,7 +1367,7 @@ url="http://dx.doi.org/10.1007/978-3-642-16612-9_14"
 @misc{Dapper,
     author = "Benjamin H. Sigelman, Luiz Andre Barroso, Mike Burrows, Pat Stephenson, Manoj Plakal, Donald Beaver, Saul Jaspan, Chandan Shanbhag.",
     title = "Dapper, a large-scale distributed tracing infrastructure",
-	note = "[Online; accessed 05-January-2017]",
+	note = "[Online; accessed 05-May-2017]",
     year = 2008
 }
 
@@ -1452,6 +1511,20 @@ url="http://dx.doi.org/10.1007/978-3-642-16612-9_14"
   year =	2012
 }
 
+@Article{thomas,
+author="Bertauld, Thomas
+and Dagenais, Michel R.",
+title="Low-level trace correlation on heterogeneous embedded systems",
+journal="EURASIP Journal on Embedded Systems",
+year="2017",
+volume="2017",
+number="1",
+pages="18",
+abstract="Tracing is a common method used to debug, analyze, and monitor various systems. Even though standard tools and tracing methodologies exist for standard and distributed environments, it is not the case for heterogeneous embedded systems. This paper proposes to fill this gap and discusses how efficient tracing can be achieved without having common system tools, such as the Linux Trace Toolkit (LTTng), at hand on every core. We propose a generic solution to trace embedded heterogeneous systems and overcome the challenges brought by their peculiar architectures (little available memory, bare-metal CPUs, or exotic components for instance). The solution described in this paper focuses on a generic way of correlating traces among different kinds of processors through traces synchronization, to analyze the global state of the system as a whole. The proposed solution was first tested on the Adapteva Parallella board. It was then improved and thoroughly validated on TI's Keystone 2 System-on-Chip (SoC).",
+issn="1687-3963",
+doi="10.1186/s13639-016-0067-1",
+url="http://dx.doi.org/10.1186/s13639-016-0067-1"
+}
  @inproceedings{53,
   author =	 " I. Cohen, M. Goldszmidt, T. Kelly, J. Symons, and J. S. Chase.",
   title =	 "Correlating instrumentation data to system states: a building block for automated diagnosis and control. USENIX Association.",
@@ -1459,12 +1532,25 @@ url="http://dx.doi.org/10.1007/978-3-642-16612-9_14"
   pages = {231–244},
   year =	2004
 }
-@inproceedings{54,
-  author =	 "Matthias Weber and Ronny Brendel and Holger Brunst",
-  title =	 "Trace File Comparison with a Hierarchical Sequence Alignment Algorithm",
-  booktitle  = "IEEE 10th International Symposium on Parallel and Distributed Processing with Applications",
-  year =	 2012
-}
+
+@article{Fournier,
+ author = {Pierre-Marc Fournier  and Michel R. Dagenais},
+ title = {Analyzing Blocking to Debug Performance Problems on Multi-core Systems},
+ journal = {SIGOPS Oper. Syst. Rev.},
+ issue_date = {April 2010},
+ volume = {44},
+ number = {2},
+ month = apr,
+ year = {2010},
+ issn = {0163-5980},
+ pages = {77--87},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1773912.1773932},
+ doi = {10.1145/1773912.1773932},
+ acmid = {1773932},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
 
 % @inproceedings{56,
 %   author =	 "lya Yanok and Nathaniel Nystrom",
@@ -1925,22 +2011,7 @@ month={Sept},}
   year =	 2014
 }
 
-@inproceedings{Weber2012TFC23574872357581,
- author = {Weber, Matthias and Brendel, Ronny and Brunst, Holger},
- title = {Trace File Comparison with a Hierarchical Sequence Alignment Algorithm},
- booktitle = {Proceedings of the 2012 IEEE 10th International Symposium on Parallel and Distributed Processing with Applications},
- series = {ISPA '12},
- year = {2012},
- isbn = {978-0-7695-4701-5},
- pages = {247--254},
- numpages = {8},
- url = {http://dx.doi.org/10.1109/ISPA.2012.40},
- doi = {10.1109/ISPA.2012.40},
- acmid = {2357581},
- publisher = {IEEE Computer Society},
- address = {Washington, DC, USA},
- keywords = {performance analysis, comparison, sequence alignment, tracing},
-} 
+
 @inproceedings{78,
   author =	 "Bikash Sharma ; Praveen Jayachandran ; Akshat Verma ; Chita R. Das",
   title =	 " CloudPD: Problem determination and diagnosis in shared dynamic clouds",
@@ -1980,7 +2051,7 @@ month={Sept},}
  author = {Ezzati-Jivan, Naser and Dagenais, Michel R.},
  title = {A Framework to Compute Statistics of System Parameters from Very Large Trace Files},
  journal = {SIGOPS Oper. Syst. Rev.},
- issue_date = {January 2013},
+ issue_date = {May 2013},
  volume = {47},
  number = {1},
  month = jan,
@@ -2181,6 +2252,13 @@ doi={10.1145/1654059.1654115},
 ISSN={2167-4329},
 month={Nov},}
 
+@techreport{mace_list,
+title={{End-to-End Tracing: Adoption and Use Cases}},
+author={Jonathan Mace},
+type={{Survey}},
+institution={Brown University},
+year={2017},
+}
 @book{brendan_book,
     title={Systems performance : enterprise and the cloud},
     author={Brendan Gregg},
@@ -2240,7 +2318,7 @@ month={Feb},
  author = {Ezzati-Jivan, Naser and Dagenais, Michel R.},
  title = {A Framework to Compute Statistics of System Parameters from Very Large Trace Files},
  journal = {SIGOPS Oper. Syst. Rev.},
- issue_date = {January 2013},
+ issue_date = {May 2013},
  volume = {47},
  number = {1},
  month = jan,

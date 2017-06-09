@@ -7,6 +7,12 @@ The development of better PADBI tools, Performance Anomaly Detection and Bottlen
 \section{Methods comparison}
 Since several methods were applied to the task and it is possible to compare them in several ways, which are summarized below.
 As explained in the article the SVM model delimits an hyperplane to divide the data and as consequence is able to segregate the slow executions and fast executions, in a dichotomy way. In some scenarios, especially considering the influence of outliers, the classification can be mislead, also segregated data gives strange results.\\
+ \begin{figure}[h]
+          \center
+          \caption{Support Vector Scenarios}
+            \includegraphics[width=0.50\textwidth]{figures/svm.png}
+            \label{fig:svm_scenarios}
+ \end{figure}
 The second method, percentage classification, is an unsupervised mechanism and leads to segregation of data even if they are homogeneously distributed among the dataset. The percentage classification is interesting to be used in the scenarios similar to k-means, without the unpredictable of the original method.\\
 This method is interesting when the standard deviations of the data are similar, so the result will be a reduced number of groups, even one group as result but might lead to many groups when the average distance of them is larger than a certain threshold. This method weave the solution of a specific problem to quantify the groups in a distribution, scenario 1, in the Figure 5.1. 
  
@@ -69,20 +75,22 @@ BC & 30 percent impact
 It is possible therefore to construct an association rule to simplify this process and avoid tracing overhead unnecessarily.
 \section{Auto clustering discussion}
 Considering the models shown above, we chose to develop a non-supervised method, a.k.a auto clustering. The possibility to use an automated approach is more interesting for us in comparison with a non-automated methods, mainly because we aim not to use the data to train the model. \\
-Therefore, we implemented a version of comparative k-means using the SSE (sum of square errors) variability information, plus an heuristic evaluation. This technique can be used for an arbitrary dimension of since the amount of difference, SSE (sum of squared error), can be calculated on those cases \cite{}.  Some limitations apply on this approach and it is possible to use Gaussian Mixture Model to overcome them.\\
+Therefore, we implemented a version of comparative k-means using the SSE (sum of square errors) variability information, plus an heuristic evaluation. This technique can be used for an arbitrary dimension of since the amount of difference, SSE (sum of squared error), can be calculated on those cases.  Some limitations apply on this approach and it is possible to use Gaussian Mixture Model to overcome them, as elaborated in \cite{gaussian}.\\
 Since the SSE drops considerably between one group and two groups, we need always to consider more than two groups, otherwise the chosen gap will be two groups.
 From the perspective of the Elbow method, also called silhouette method, which in fact is just of of the criteria that can be used to find the best k, as the calinski criterion as described in \cite{calinski}. The used approach can also be compared with the x-means clustering technique, where the best results are kept to be compared.
-A more complete approach could be done using the gap statistical calculation, which uses calculation of within cluster dispersion, as described \cite{gap_statistical}.
+A more complete approach could be done using the gap statistical calculation, which uses calculation of within cluster dispersion, as described in \cite{gap_statistical}.
+The next step would be to use an agglomerative clustering technique, which is an bottom up technique where each observation 
 \section{Data structure evaluation}
 We used two dynamic structures in the solution, a calling context tree with metrics, i.e. ECCT but also a dynamic call tree with metrics, i.e. EDT instead of a ECCT. 
 The main difference resides in the summarized purpose of the ECCT, which is used in previous literature. Although the EDT has much longer size comparatively, the use of EDT is to avoid the addition of a pre-processing phase in the comparison of the internal nodes, that is, when comparing small portions of a software application, where an entire tree is unnecessary, the use of a EDT can be more suitable.\\
 Those two dynamic structures, as any other tree, can be analyzed comparatively in two specific ways: the topological organization of the structure and the weights of the nodes. \\
 The first approach can be used to compare differences among software, specifically targeting the profiling approaches. This strategy can be used in terms of tracing mining in kernel space if a pattern approach is used to automatically delimit the entries and exits of the nodes.\\
-The second approach is the used in this research and consists of comparison of weights of nodes of similar trees. The weights in the our approach are the hardware and software performance metrics.
+The second approach is the used in this research and consists of comparison of weights of nodes of similar trees. In this approach, the weights are the hardware and software performance metrics, e.g. page-faults and cache-misses.
 \section{Usage}
 This tool has various situations where the standard profiling is not suitable and the tracing requires analysis, for example with large data traces.
 An unequivocal example of real utilization of this tool are regressions tests, as shown in the use cases of OpenCV and cache-misses. Though the proposed solution can be used to detect regressions, it is suitable as a diagnosis tool, since it can indicate root cause.\\
 The solution presented in this research could be integrated to PARCS or even in a similar framework, while the performance metrics are compared in each version and see the patterns, since the mining technique have a complementary approach that compares the weights of the nodes, instead of the topological structure. \\
+Although not explored, it is possible to use this work for developing enhanced trees, ECCTs or EDTs, in the kernel side of the system and applying the same comparison techniques explored here, it is possible to mine data from it.
 \section{Visualization Tools}
 The Red Grey Green Differential, RGG, suggested in the work can reduce the ambiguity of the similar executions, which would have the same color although they had different performances comparatively. \\
 This different implementation, in comparison to the standard Differential Flame Graph, will reduce the analysis time by avoiding the verification of the equal time use cases. In terms of groups of event or profiling data in general.\\

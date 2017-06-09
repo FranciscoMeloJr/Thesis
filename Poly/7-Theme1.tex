@@ -1,7 +1,7 @@
 \Chapter{METHODOLOGY}\label{sec:Theme1}
 In this chapter the problem, research assumptions and research questions will be stated.
 \section{Problem Definition}
-The problem addressed in the work can be summarized in comparing several times the executions of software have different performances for several factors, intrinsic and extrinsic of the program itself.
+The problem addressed in this work can be summarized as comparing several times the executions of the same software measuring different performances aspects. Those aspects might indicate several factors, intrinsic and extrinsic of the program's performance.
 \section{Research assumptions}
 (i) It is possible to gather information from tracing records and understand it using high level abstractions and data structures.\\
 (ii) It is possible to associate and/or correlate metrics gather from traces using mathematical techniques in a meaningful way.\\
@@ -10,35 +10,37 @@ It is also important to highlight that this work partially relies on previous wo
 
 \section{Research Questions}
 \textit{Is it possible, using high level abstractions and dynamic data structures, to find root causes for performance differences?}\\
-\textit{Minor question: What are the limitations of the current techniques?}\\
+\textit{Minor question: What are the limitations of the current techniques and how to improve them?}\\
   
-Although most of the time for performance analysis a visualization tool is used, quite often is mandatory specialized knowledge to interpret the information gathered to solve real problems. On real situations moreover, it is required time to analyze and solve a problem, so a more automatic approach can be taken on those cases. To interpret the information from traces in a meaningful way, it will be necessary to do some correlations and use more high level abstractions than just comparing traces.
+Although currently performance analysis uses visualization tools as main solution, quite often is still required specialized knowledge to interpret the information gathered and as a consequence specialists knowledge is necessary. On real situations moreover, time is a scarce resource and deep analyse might impact in deployed systems to solve problems, so an automatic approach can be useful on those cases.\\
+Furthermore, the application of statistical comparisons might be limited to those cases, which makes difficult to solve them without using some correlations using more high level abstractions, e.g. ECCT or EDT.
 
 \section{Specific objectives}
-The aim of this research is to aim for an automation of trace analysis and several mechanisms are explored on that direction. From this objective, we were able to develop this was helpful to identify precisely the root cause of performance bottlenecks on software applications.\\
-The field of tracing tools is very specific and relies on analyzing a considerable amount of information from the trace files. In fact, just some few seconds of recording can give an enormous amount of information to be analyzed. Therefore, there is a tool dependency for generating this information, but also a knowledge dependency, since the interpretation of this data depends on performance analysts.  
+The aim of this research is to for the automation of trace analysis and several mechanisms are explored on this direction. From this objective, we were able to develop some helpful techniques to identify the root cause of performance bottlenecks of software applications.\\
+The field of tracing tools is very specific and relies on analyzing a considerable amount of information from the trace files. In fact, just some few seconds of recording can give an enormous amount of information to be analyzed. Therefore, there is a tool demand for analysing fast this information, but at the same time a knowledge dependency, since the interpretation of this data depends on specialized performance analysts.  
 
 \section{Solution Design}
 The design of the solution was developed to target two specific aspects: automation and flexibility. 
-The first automation, is that the solution can be applied with minimal intervention. That is, it can be used without a specific pre-phase of the learning and labeling the data. The presented solution is complementary to some techniques of clustering, such as k-means, requires the number of k, i.e. the number of groups.\\
-The second is that the flexibility of this approach, that can be used with different grouping and clustering techniques. The heuristic comparison possibilities the use of many clustering and grouping mechanisms such as k-means algorithm.\\
+The first aspect, automation, can be outlined as the need of the solution to be used with minimal intervention. That is, it can be used without a specific pre-phase of the learning and labeling the data. Moreover, the presented solution does not require deep statistical knowledge and is complementary to some techniques of clustering, such as k-means, requires the number of k, i.e. the number of groups.\\
+The second aspects, flexibility,  that can be used with different grouping and clustering techniques. The heuristic comparison possibilities the use of many clustering and grouping mechanisms such as k-means algorithm.\\
 As trade-off of the approach, the time increased since the heuristic comparison applies several times the execution of clustering methods.
 \section{Approach}
 The approach used for the solution can be divided in two parts: the data collection tools and the data analysis methods, presented below respectively:
 \subsection{Data collection tools}
-The tools used for data collection were LTTng and Perf counters. The applications were statically instrumented or compiled with the instrumentation. LTTng provides a small overhead, so the traced application can run with a negligible performance difference. Perf is able to provide the hardware and software performance counters for the executions.
-The tracing of the executions will provide the data that later will be used for the construction of the tree, i.e. ECCT or a EDT, Enhanced Dynamic Tree.
+The tools used for data collection were LTTng and Perf counters. The applications were statically instrumented or compiled with the instrumentation. LTTng provides a small overhead, so the traced application can run with a negligible performance difference compared to the normal run. Perf is able to provide the hardware and software performance counters for the executions.\\
+The tracing of the executions will provide the data that later will be used for the construction of the tree, if a summarized tree, Enhanced Calling Context Tree, or not summarized, EDT, Enhanced Dynamic Tree.
 \subsection{Data analysis methods}
-In terms of data analysis several methods were applied, for example: k-means, percentage classification and Support Vector Machine. Later it was applied the auto grouping technique above all previous ones to automate them.\\
+In terms of data analysis several methods were applied, for example: k-means, percentage classification and Support Vector Machine. Later it was applied the auto grouping technique above all previous ones to automate them. This research focus in the so called hard-clustering, which is different than fuzzy clustering algorithms, such as EM and Gaussian Mixture Model.\\
 The first method, k-means, is a centroid algorithm which does the optimal grouping data. This algorithm will guarantee the best partitioning of the data with an specific k, the k is the number of groups and must be given a priori.\\
 The second technique, percentage classification is a method of grouping a percentage of distance near the points, similar to a range classification. Several percentages can be tested to reduce or enlarge the distance.\\
-The auto grouping technique, using heuristic classification, was used later developed to fulfill the need for an automated flexible classification mechani. The mechanism is composed basically of comparing a statistical measurement of deviations within the groups called SSE. This technique is able to find groups automatically since they SSE has a interesting behavior that can be tracked using the so called elbow heuristic, this enables the comparison of several SSE of different groups and the finding of the optimal value for grouping. The heuristic does not required to be a pre-classification.
+The auto grouping technique, using heuristic classification, was used later to fulfill the need for an automated flexible classification mechanism. The mechanism is composed basically of comparing a statistical measurement of deviations within the groups called SSE. This technique is able to find groups automatically since the SSE distribution is related to the internal variance of the groups distribution and its patterns presents a curve, which can be used to find an optimal value, the so called elbow heuristic. Briefly, this enables the comparison of several SSE of different groups and can be used without a pre-classification phase.
 \subsection{Testing Framework}
 For the testing settings we developed a testing framework in C++ using the QtCreator Framework. The framework was used to test the concept of the models and grouping techniques by simulating a series of specific performance issues that are measured by perf counters.\\
 In those specific scenarios, such as high cache-misses or page-faults, the measurements were made in such a way that they are later exported to a comma-separated-value file, CSV file.
 \section{Solution Application}
-The solution can be applied to several scenarios where the performance counters are able to measure the real behavior of the system and the tracing data has minimal or negligible influence in the real program.
-An interesting application of the solution are regression tests, which aim for finding performance regression in one version to another. Indeed the solution can be integrated as it is in test sets aiming to find the performance issues before the deployment of the application.
+The solution can be applied to several scenarios where the performance counters are able to measure the real behavior of the system and the tracing data has minimal or negligible influence in the real program.\\
+An effective application of the solution are regression tests, which as described in the literature review, aim for finding performance regression in one version to another. Indeed, the solution can be used in those cases or at least part of the solution.\\
+The solution can also be fully or partially integrated in a testing framework aiming to find the performance issues before the deployment of the application.
 \section{Co-authored articles}
 In partnership in \cite{google_releases} we did performance measurements using Confidence Interval. This work was accepted at the conference QRS 2017, we applied a comparative technique data from Google Chrome performance measurements. The challenge was to detect performance deviations among Chromium software releases. The method done was to compare the confidence interval, using the median instead of the mean, as mean of comparing several releases.\\
 As result, we were able to demonstrate that this method of confidence interval, using medians, is able to compare the releases similarly to a t-test and was able to determine performance deviations at a function-level granularity with a small number of trace samples.\\

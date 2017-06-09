@@ -28,8 +28,9 @@ The percentage classification was done by comparing the metrics and separate the
     
 \textit{K-means}\\
 K-means is a simple unsupervised machine learning algorithm that groups a dataset into a user-specified number (k) of clusters. The algorithm is somewhat naive it clusters the data into k clusters, even if k is not the right number of clusters to use. Therefore, when using k-means clustering, users need some way to determine whether they are using the right number of clusters.
-Since, the number of groups must be known before applying the k-means, another technique needs to be applied in order to find the appropriate number of groups (k). 
+Since, the number of groups must be known before applying the k-means, another technique needs to be applied in order to find the appropriate number of groups (k). A similar algorithm, but ofr one 1D is called Jenks Natural Breaks \cite{break}.
     
+     
     
 \textit{Comparing Models}\\
 Comparing the three techniques described above, the conclusions were. First, the SVM model was able to delimit the difference between the slow executions and fast executions. However, the delimitation is in just two groups. \\
@@ -40,7 +41,7 @@ Finally the k-means algorithm is efficient but requires the number of groups to 
 \textit{Auto Clustering}\\
 Considering the models shown above, we chose to develop a non-supervised method, called auto clustering. The possibility to use an automated approach is more interesting for us in comparison with a non-automated methods, mainly because we aim not to use the data to train the model. Therefore we implemented a version of comparative k-means using the SSE (sum of square errors) variability information, plus an heuristic evaluation. This technique can be used for an arbitrary dimension of since the amount of difference, SSE (sum of squared error), can be calculated on those cases \cite{multi_dimentionals_sse}.
     
-\subsection{\textbf{Automatic Clustering through heuristic Evaluation}}
+\subsection{Automatic Clustering through heuristic Evaluation}
 
     \textit{Elbow method}\\
     One method to quantitatively measure the number of clusters is the elbow method. This method compares the sum of squared errors (SSE) considering several numbers of groups from the classification used. 
@@ -53,17 +54,28 @@ Considering the models shown above, we chose to develop a non-supervised method,
     To compare the SSE values, we needed also to do an heuristic function which compares the different values of the SSE to compute the Elbow. 
     Therefore, we use this approach to compare several runs of classifications and extract the one with less squared errors. The used heuristic is to take as optimal group the biggest gap on an array of SSE values. 
     
-    The Figure \ref{fig:sse}, shows an illustration of the SSE and the elbow value. The elbow value is the number that marks the change on the path of the function, in the example is number of groups 2.
+    The Figure \ref{fig:sse}, shows an illustration of the SSE and the elbow value. The elbow value is the number that marks the change on the path of the function, in our case the number of groups is 2. 
+     \begin{figure}[h]
+     \vspace{-10pt}
+      \centering
+        \includegraphics[width=0.50\textwidth]{figures/sse-groups.png}
+        \caption{Elbow method: SSE Comparison}
+        \label{fig:sse}
+        \vspace{-10pt}
+    \end{figure}
+    
+    The Figure \ref{fig:grouping-hist}, shows the SSE differences considering several number of groups. This image clearly shows the biggest gap between one and two groups, but since we are assuming that the data has gaps, we are not using one as the optimal number.
     
     \begin{figure}[h]
       \centering
-        \includegraphics[width=0.50\textwidth]{figures/SSE.png}
-        \caption{Elbow method: SSE Comparison}
-        \label{fig:sse}
+        \includegraphics[width=0.50\textwidth]{figures/grouping-hist.png}
+        \caption{Automated clustering of the executions into 2 groups}
+        \label{fig:grouping-hist}
+        \vspace{-10pt}
     \end{figure}
 
-
-\subsection{\textbf{Association among the Groups}}
+    
+\subsection{Association among the Groups}
 \label{sec:association}
 The clustering of metrics is just a part of the approach, since a rule of groups need to be applied to find the specific cause for the discrepancy on the executions. To solve this problem and find the cause of the difference, after the grouping mechanism we applied a set association rule. Therefore, using a set exclusion, we can find the metric that is responsible for the elapsed time.
 The association rule is illustrated on the Figure \ref{fig:association}, which describes a metric X and the elapsed time comparison. The grouping on the Metric x divides the data in two groups and those groups are the intrinsic related to the elapsed time group. \\
@@ -95,5 +107,5 @@ B                     & 75\%                      & X                        & 6
 \label{fig:association}
 \end{table}
 
-\subsection{\textbf{Accuracy of the model}}
+\subsection{Accuracy of the model}
 The association will give the group of metrics that are related with slow and fast runs, however, there is the possibility of false positives and false negatives. The accuracy of the model is related with the size of the groups given, i.e. the all slow executions will be in one group, however the related metric, which explains the reason, is bigger than the associated group.  In summary, if the groups overlap, main metric and slow executions, no false positives of negatives were found, even though the overlap does not mean is responsible for the performance problem, it is only an indication factor. In this matter, statistics is an indicator of underlying causes, which requires some complementary analysis to be confirmed.
