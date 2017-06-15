@@ -75,11 +75,17 @@ BC & 30 percent impact
 It is possible therefore to construct an association rule to simplify this process and avoid tracing overhead unnecessarily.
 \section{Auto clustering discussion}
 Considering the models shown above, we chose to develop a non-supervised method, a.k.a auto clustering. The possibility to use an automated approach is more interesting for us in comparison with a non-automated methods, mainly because we aim not to use the data to train the model. \\
-Therefore, we implemented a version of comparative k-means using the SSE (sum of square errors) variability information, plus an heuristic evaluation. This technique can be used for an arbitrary dimension of since the amount of difference, SSE (sum of squared error), can be calculated on those cases.  Some limitations apply on this approach and it is possible to use Gaussian Mixture Model to overcome them, as elaborated in \cite{gaussian}.\\
+Therefore, we implemented a version of comparative k-means using the SSE (sum of square errors) variability information, plus a heuristic evaluation. This technique can be used for an arbitrary dimension of since the amount of difference, SSE (sum of squared error), can be calculated on those cases.  Some limitations apply on this approach and it is possible to use Gaussian Mixture Model to overcome them, as elaborated in \cite{gaussian}.\\
 Since the SSE drops considerably between one group and two groups, we need always to consider more than two groups, otherwise the chosen gap will be two groups.
-From the perspective of the Elbow method, also called silhouette method, which in fact is just of of the criteria that can be used to find the best k, as the calinski criterion as described in \cite{calinski}. The used approach can also be compared with the x-means clustering technique, where the best results are kept to be compared.
-A more complete approach could be done using the gap statistical calculation, which uses calculation of within cluster dispersion, as described in \cite{gap_statistical}.
-The next step would be to use an agglomerative clustering technique, which is an bottom up technique where each observation 
+From the perspective of the Elbow method, also called silhouette method, which in fact is just of of the criteria that can be used to find the best k, as the calinski criterion as described in \cite{calinski}. This approach, Calinski-Harabasz,  is used in \cite{cluster} to specifically determine the number of clusters.\\
+The used approach can also be compared with the x-means clustering technique, where the best results are kept to be compared.A more complete approach could be done using the gap statistical calculation, which uses calculation of within cluster dispersion, as described in \cite{gap_statistical}.
+The next step would be to use an agglomerative clustering technique, which is an bottom up technique where each observation.
+
+\section{Performance Counters}
+The first highlight in the research are the performance counters used are limited to the counters in Perf. The more addition, the more overhead is added, so the use cross-validation scheme. 
+Depending on the quantity of different metric counters, the process of grouping will increase its complexity, even hundreds of metrics as expressed in \cite{cluster}. \\
+Besides, considering hundreds of metrics, a pair-wise analysis done in the groups comparison could be a restriction, consequently another a control chart could be used.
+    
 \section{Data structure evaluation}
 We used two dynamic structures in the solution, a calling context tree with metrics, i.e. ECCT but also a dynamic call tree with metrics, i.e. EDT instead of a ECCT. 
 The main difference resides in the summarized purpose of the ECCT, which is used in previous literature. Although the EDT has much longer size comparatively, the use of EDT is to avoid the addition of a pre-processing phase in the comparison of the internal nodes, that is, when comparing small portions of a software application, where an entire tree is unnecessary, the use of a EDT can be more suitable.\\

@@ -1,0 +1,7 @@
+As future work, we plan to expand our investigation by using non-linear models to track regression problems in different software versions\cite{deep}. This can be used as an automated test to find software regressions. An example of possible models are feed-forward network, ibidem, also called deep learning networks.
+The models need to be able to characterize specifically non-linear dependencies and be able to be used without non label data.\\ 
+% Considering those restrictions, an Autoencoder or a Restricted Boltzmann Machine are also candidates.\\ 
+%This require modifications in the loss function.
+
+Another possibility would be to apply other techniques such as Apriori algorithm, \cite{apriori}, which can determine association rules among the metrics recorded in the enhanced CCT, for each cluster. Finally, tracking performance issues before the release of new software is an interesting path to be followed. Thus, an automated mechanism to find them before the release of a new version of software is very promising. A possibility could be to develop a mechanism to be executed as a regression test suite, from the machine learning models described above, before the releasing.
+

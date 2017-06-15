@@ -24,12 +24,12 @@ This document presents the state of the art in terms of analysis tools related t
 
 \section{Challenges in tracing analysis}  % environ 2-3 pages
 The first challenge on tracing analysis is to mine meaningful data from the tracing data. A possible way to solve this issue is to group or cluster the tracing data or adding a level of abstraction, to explore and measure its behaviour. Using clustering, the challenge turns to a classification of the data without supervision and how to efficiently apply this technique to measure the causes of the performance issues.\\
-The second main challenge of identifying with certainty a root cause of a specific performance issue. This problem is related to the fact that, considering clusters that delimits different executions, even with clear properties differentiate them, not necessarily this properties is the cause of the difference. This challenge can be summarized as association does not mean causation and even if a metric is capable of explaining all the differences on the groups, it is not necessarily is the cause of this difference.\\
+The second main challenge of identifying with certainty a root cause of a specific performance issue. This problem is related to the fact that, considering clusters that delimits different executions, even with clear properties differentiate them, not necessarily this properties is the cause of the difference. This challenge can be summarized as: \textit{association does not mean causation} and even if a metric is capable of explaining all the differences on the groups, it is not necessarily the cause of this difference.\\
 Summarized, these challenges may constitute a real barrier for performance evaluation and diagnosis. They have been partially solved with the current solutions, and despite the success of tracing techniques, there are still opportunities for further enhancements in terms of data analysis.
 
 \section{Elements that impact performance}  % environ 2-3 pages
 Several elements compose the performance of an application, especially in the current programming languages like C and C++. The use of prefetching mechanisms and compiler optimization might impact considerably in the software performance. Out-of-other executions can impact the performance as well.\\
-The use of parallelism architectures significantly improved the overall performance of computers ans consequently software applications, example of architectures are Skylake and Kaby Lake, bringing hyper-threading, large L3 caches, and four or more physical cores. However, this performance improvement is not be linear since it will follow the Amdahl's law of parallelism. \\
+The use of parallelism architectures significantly improved the overall performance of computers and consequently software applications, example of architectures are Skylake and Kaby Lake, bringing hyper-threading, large L3 caches, and four or more physical cores. However, this performance improvement is not necessarily linear since it will follow the Amdahl's law of parallelism. \\
 The limitation in the number of cores and their communication procedures, as well as other hardware limitations that processor manufacturers are facing, inexorably is tending the improvement in software algorithms and related features, as explained by \cite{limitations}. Better algorithms and data structures will be required even more in companies. Tools as profilers and debuggers can be used to improve small parts of a software application or find bugs, respectively.\\
 At the same time, an application is not executed isolated in the system and the operating system has a strong impact, or at least interference, in the execution and can not be neglected. Consequently, performance tools such as profilers have a limited analysis in the overall context of an application, so the use of tracing is required.
 Therefore, as consequence of the software requirements, the context of utilization of an application and the amount of resources (and features) that might impact a software performance, deep and efficient analysis methods will be required. \\
@@ -39,7 +39,7 @@ In summary, this work combines the current tools of profiling and tracing to tar
 The main objective of this work is to reduce the need for human intervention in the analysis of the system performance. The methodology to fulfill this objective is a comparative methodology is to segregate the data in cluster and later to compare the fast and the slow executions.\\
 The collection of the data is done using tracing and profiling techniques combined with data mining, heuristics and statistics tools. The developed methods were able to find real associations in data with metrics and consequently indicate root causes of performance issues.\\
 This work focuses on Linux operating systems and its tools, such as LTTng and Perf counters. Nonetheless, the heuristic approach could be applied to any system that is able to describe the behaviour of a system using metrics.\\
-In a specific and summarized way, objectives can be summarized as follows:\\
+In a specific and briefly way, objectives can be summarized as follows:\\
 \begin{enumerate}
 \item Reducing or avoiding the requirement of human intervention in tracing data analysis
 \item Improving the current methods to find root causes using metrics
@@ -62,7 +62,7 @@ The dissertation brings a compilation of the research focusing in several aspect
 The proposed solution as grouping mechanism to track root cause analysis can be used in any cause that the runs can be separated in executions and that the performance counters. Scenarios like this can be found in C/C++ userspace applications, but also in web application where the server can be instrumented to record requests and their performance counters.\\
 The mining algorithms can then be applied to cluster the anomalies, or isolate abnormal executions, and compare them, using profiling techniques. The result of this classification can be used in fuzzy groups, i.e. not just two totally fast and totally slow performance groups and this can bring more information for the analysis in general.\\
 The proposed RGG Differential Flame Graph can reduce the ambiguity for equal performance functions and it is suitable for fast and slow comparison. 
-Finally, an heuristic evaluation can be used combined with other clustering or grouping tools, such as k-means, to reduce the need for human intervention. Specifically in terms of k-means algorithm, the use of this heuristic gives the optimal number of k for the clustering algorithm to work. \\
+Finally, a heuristic evaluation can be used combined with other clustering or grouping tools, such as k-means, to reduce the need for human intervention. Specifically in terms of k-means algorithm, the use of this heuristic gives the optimal number of k for the clustering algorithm to work. \\
 The solution can be applied directly in real application use for this tool is in regressions tests, where unit tests, profiling tools and debuggers can not reveal the causes for performance deviations. Further details will be provided in the the article.
 To help in the understanding of the solution, we will present some definitions intrinsically related to the research, in the following section.
 
@@ -70,13 +70,13 @@ To help in the understanding of the solution, we will present some definitions i
 
 \subsection{Anomaly}
 Anomalies can be simplified as discrepancies in the expected distribution or on a graph, or as a point or group of data points lying outside an expected normal region, as outlined in \cite{das_detection}. \\
-However, this research focus in a specific kind of anomalies, collective anomalies and may consider point anomalies also. According to the definition the definition of anomaly of \cite{Chandola2009ADS15418801541882} and is related to a group of discrepancies in terms of standard behaviour. The collective discrepancies may indicate a series of conditions related to the observed software.\\
+However, this research focuses in a specific kind of anomalies, collective anomalies and may consider point anomalies also. According to the definition the definition of anomaly of \cite{Chandola2009ADS15418801541882} and is related to a group of discrepancies in terms of standard behaviour. The collective discrepancies may indicate a series of conditions related to the observed software.\\
 \subsection{Execution}
         
 Execution is any run of a program that can be traced and the performance data can be used to measure its behaviour. Executions can be grouped so they can be compared systematically using several techniques. Inside an execution several performance parameters can be present. On this research we focus on comparison methods of groups of executions, which can be compared using several statistical techniques. 
 
 \subsection{Profile}
-Profiling is the a dynamic analysis of a program. Broadly there are two main types of profilers: the ones that count the number of invocations and the ones that display the a time measurement about the statements and routines. An example of profiler is gprof, which counts the running time of routines \cite{Graham82gprofa}.\\
+Profiling is a dynamic analysis of a program, broadly there are two main types of profilers: the ones that count the number of invocations and the ones that display the a time measurement about the statements and routines. An example of profiler is gprof, which counts the running time of routines \cite{Graham82gprofa}.\\
 The profiling mechanisms can be used to analyze with deep the core an application or the system, specifically the stack frames of the application.
 
 \subsection{Debug}
@@ -84,17 +84,17 @@ Software debugging is the general process of finding and resolving software issu
 
 \subsection{Instrumentation}
 Instrumentation can be defined as the technique of write trace statements at some locations of the code. 
-Instrumentation can be done dynamically and statically. The first, dynamic instrumentation, is the possibility of changing the code instrumentation during execution time. In LTTng, probes are inserted in the kernel code then the kernel is compiled and the system is rebooted with an instrumented version \cite{Weber2012TFC23574872357581}.
+Instrumentation can be done dynamically and statically. The first, dynamic instrumentation, is the possibility of changing the code instrumentation during execution time. In LTTng, probes are inserted in the kernel code then the kernel is compiled and the system is rebooted with an instrumented version \cite{TraceFile}.
 Whereas, static instrumentation is the process of inserting instrumentation directly in the source code \cite{Graham82gprofa}. \\
 Instrumentation can be simplified as the process of inserting extra code in the application to measure its behaviour. Instrumentation can be performed at various stages: in the source code, at compile time, post link time, or at run time. \\
 There are two possibilities of dynamic instrumentation of code: probe-based and jit-based.  This first one, probe-based, is used by  Dyninst in \cite{dyninst}, Vulcan from \cite{Vulcan}, and \cite{dtrace}.  The second instrumentation approach is jit-based Valgrind \cite{Valgrind}, Strata in \cite{Strata}, DynamoRIO \cite{DynamoRIO}, Diota \cite{Diota}, and Pin in \cite{Pin}.
 
 \subsection{Tracing}
-The concept of tracing can be defined as a very fast mechanism system-wide fined grained logging. With Different than logging, which deals with high level record of the system, tracing records the low events of the system. This record can then be used for another analysis mechanism, such as sequence matching, trace abstraction and visualization tools.\\
+The concept of tracing can be defined as a very fast mechanism system-wide fined grained logging. Regarding a comparison with logging, which deals with high level record of the system, tracing records the low events of the system. This record can then be used for another analysis mechanism, such as sequence matching, trace abstraction and visualization tools.\\
 The understanding of the system it not trivial, by browsing a list of events for example, the trace files are analyzed using a program that processes the traces. Those tools will generate graphical or textual reports including several resources of the system, including: process status, amount of data read or written, latencies and Interruptions.
 
 \subsection{Events}
-Events here are defined as a record containing: timestamp, a type and some arbitrary payload. They can also be used highlight the entries and exits of functions in a software application and combined with performance metrics, can be used to measure the current state of an application \cite{giraldeau-ols2011}.
+Events here are defined as a record containing: timestamp, a type and some arbitrary payload. They can also be used to highlight the entries and exits of functions in a software application and combined with performance metrics, can be used to measure the current state of an application \cite{giraldeau-ols2011}.
 
 \subsection{Metrics}
 The concept of metric here is the hardware or software performance runtime information and can to gather several aspects of the behavior of the system \cite{giraldeau-ols2011}. The term metric used in this work is related to hardware and software metrics, mostly collected using Perf. \\

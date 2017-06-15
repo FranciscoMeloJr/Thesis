@@ -1,4 +1,3 @@
-
 %Specifically considering the approach used here, comparing the metrics of a program to classify them the work of Francois Doray, in TraceCompare has a similar approach.
 In this section will be presented the basic principles of current tools used to find performance issues. The related work was divided in: Data collection, Analysis tools and Visualization tools that are described below.\\
 
@@ -6,16 +5,16 @@ In this section will be presented the basic principles of current tools used to 
 From the perspectives of Data Collection, there are two main works related to this work, LTTng and Linux Perf Events.
 
 % \subsection{LTTng}
-The first, LTTng, Linux Trace Toolkit Next Generation \cite{desnoyers}, tracer can record events from the Linux kernel and from user space applications into a single trace. It is also designed to have a minimal overhead on traced systems. It is therefore well suited to our goal of collecting all the factors that contribute to the execution time of tasks in production environment.\\
+The first, LTTgn, Linux Trace Toolkit Next Generation \cite{desnoyers}, tracer can record events from the Linux kernel and from user space applications into a single trace [29]. It is also designed to have a minimal overhead on traced systems. It is therefore well suited to our goal of collecting all the factors that contribute to the execution time of tasks in production environment.\\
 
 % \subsection{Linux Perf}
 The second, Linux Perf Events is a profiler tool for Linux 2.6+ based systems that abstracts away CPU hardware differences in Linux performance measurements and presents a simple command-line interface. Perf is based on the perf events interface exported by recent versions of the Linux kernel. This article demonstrates the perf tool through example runs \cite{perf}. It is possible to record software events and hardware events \cite{vitillo}.\\
 It is interesting to highlight that the Perf tool can be used to record profiles on per-thread, per-process and per-cpu basis \cite{perftool}.\\
 
 % \textbf{Analysis tools}\\
-From the point of view of Analysis tool, there are two main tools related to this work, TraceCompare and Trevis.
+From the point of view of Analysis tool, there are two main tools related to this work, TraceCompare and Trevis.\\
 % \subsection{TraceCompare}
-The first tool, TraceCompare, was developed in Dorsal lab \cite{tracecompare}, which creates an enhanced Calling Context Tree to measure the metrics from specific segments of a trace. Those segments are defined by the user as sequences of begin and end. This tool was developed to compare traces of execution and it uses a javascript front-end and tibeebeetles as back-end. To do this CPU profiling comparison, the GUI tools provides a Differential flame graphs as defined in \cite{differential_flame}.
+The first tool, TraceCompare, was developed in Dorsal lab \cite{tracecompare}, which creates an enhanced Calling Context Tree to measure the metrics from specific segments of a trace. Those segments are defined by the user as sequences of begin and end. This tool was developed to compare traces of execution and it uses a javascript front-end and tibeebeetles as back-end. To do this CPU profiling comparison, the GUI tools provides a Differential flame graphs, \cite{differential_flame}.
  It was able to find abnormalities in the write function of MongoDB after several runs. However, TraceCompare requires expert knowledge and also some statically metrics of analysis \cite{doray_thesis}.\\
  
 % \subsection{Trevis}
@@ -24,14 +23,17 @@ allows the users to play with the CCTs by applying several methods.
 However, this tool relies in a human interaction, which occurs at FlyBy, to stipulate on the slower executions. FlyBy provides after an report of failure containing this information that later can be used in Trevis to be analyzed.\\
 
 % \subsection{Spectroscope}
-The third tool, Spectroscope, was developed in \cite{Sambasivan2011DPC19724571972463}, is a tool that uses statistical and high level analysis, in fact, it was design to find changes in behaviour, not find specific anomalies and it was used to find problems in two versions (or periods) on Google's Ursa Minor distributed software. Specifically for this software, five problems are described. It uses Startdust as end-to-end tracers and it added some overhead on Ursa Minor performance, depending the operation. \\
+The third tool is Spectroscope, that is a tool that uses statistical and high level analysis, in fact, it was design to find changes in behaviour, not find specific anomalies and it was used to find problems in two versions (or periods) on Google's Ursa Minor distributed software. Specifically for this software, five problems are described. It uses Startdust as end-to-end tracers and it added some overhead on Ursa Minor performance, depending the operation. \\
 It uses Perl language and MATLAB statistical comparison of no problematic period and a problematic period, also using DOT for the plotting part.
 The statical comparison used is the Kolomogrov-Smirnov test,  which is a non-parametric test for mutation identification that compares the shapes and distribution of mathematical function and later using a ranking system for mutation identification.\\
- Spectroscope uses normalized discounted cumulative gain (NDCG), for the performance evaluation is used a range evaluation. Spectroscope is similar with Pip in \cite{Pip} and TAU in \cite{TAU}.\\
- 
+ Spectroscope uses normalized discounted cumulative gain (NDCG), for the performance evaluation, which is a range from 0.0 to 1.0. Spectroscope is similar with Pip and TAU \cite{Pip} \cite{TAU}.\\
+
 % \subsection{Introperf}
-Finally, Introperf developed by \cite{Introperf} is a tool that uses system stack traces to generate CCT, called Performance Annotated CCT that they call PA-CCT. Then, it ranks the latencies and compare them \cite{Introperf}. The intend of this tool is to be used in a post-development stage. It was implemented using ETW, \cite{ETW}. It is explained on the paper about the latency inference algorithm used for this calculation. They used this approach to to avoid the requirement of source code or modification to application. \\
+Finally, Introperf is a tool that uses system stack traces to generate CCT, called Performance Annotated CCT that they call PA-CCT. Then, it ranks the latencies and compare them \cite{Introperf}. The intend of this tool is to be used in a post-development stage. It was implemented using Windows ETW\cite{ETW}. It is explained on the paper about the latency inference algorithm used for this calculation. They used this approach to to avoid the requirement of source code or modification to application. \\
+ 
 
 % \textbf{Visualization tools}\\
 % \subsection{Flame Graph}
-From the point of visualization of comparison technique, the flame graphs and differential flame graphs, developed by Brendan Gregg is a very popular technique. They can be used for comparing the executions, it is possible to use a Flame Graph diagram. As defined by Brendan Gregg \cite{differential_flame}, Differential Flame Graphs can be a useful tool for comparing executions. A Differential Flame Graph is a visualization technique highlight differences on collections of stack traces (aka call stacks), from two different executions. Flame graphs are commonly used to visualize CPU profiler output, where stack traces are collected using sampling.
+From the point of visualization of comparison technique, the flame graphs and differential flame graphs, developed by Brendan Gregg is a very popular technique. They can be used for comparing the executions, it is possible to use a Flame Graph diagram. As defined by Brendan Gregg, \cite{brendan_differential}, Differential Flame Graphs can be a useful tool for comparing executions. A Differential Flame Graph is a visualization technique highlight differences on collections of stack traces (aka call stacks), from two different executions. Flame graphs are commonly used to visualize CPU profiler output, where stack traces are collected using sampling.
+
+The use cases debated in this work are related to regression analysis, where the performance of a software application decreases comparing a new version to the older one. Similar cases were studied by \cite{cluster} and \cite{nguyen2012automated_control_chart}, which focus in use cases related to the software Dell DVD Store. The first work used a hierarchical clustering approach, while the second work used a control chart approach.
